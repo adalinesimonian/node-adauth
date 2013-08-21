@@ -21,7 +21,7 @@ The additional options the changes above introduce are `searchAttributes`,
 
 ## Usage
 
-    var LdapAuth = require('ldapauth');
+    var LdapAuth = require('ldapauth-fork');
     var options = {
         url: 'ldaps://ldap.example.com:663',
         ...
@@ -35,7 +35,7 @@ The additional options the changes above introduce are `searchAttributes`,
 
 ## Install
 
-    npm install ldapauth
+    npm install ldapauth-fork
 
 
 ## License
@@ -51,7 +51,7 @@ MIT. See "LICENSE" file.
 ## express/connect basicAuth example
 
     var connect = require('connect');
-    var LdapAuth = require('ldapauth');
+    var LdapAuth = require('ldapauth-fork');
 
     // Config from a .json or .ini file or whatever.
     var config = {
