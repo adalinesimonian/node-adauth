@@ -1,17 +1,17 @@
 {
-  "name": "ldapauth",
+  "name": "ldapauth-fork",
   "version": "2.2.3",
   "main": "./lib/ldapauth.js",
   "description": "Authenticate against an LDAP server",
-  "author": "Trent Mick <trentm@gmail.com> (http://trentm.com)",
+  "author": "Vesa Poikajärvi <vesa.poikajarvi@iki.fi>",
   "license": {
     "type": "MIT",
-    "url": "https://github.com/trentm/node-ldapauth/raw/master/LICENSE"
+    "url": "https://github.com/vesse/node-ldapauth/raw/master/LICENSE"
   },
   "keywords": ["authenticate", "ldap", "authentication", "auth"],
   "repository": {
     "type": "git",
-    "url": "git://github.com/trentm/node-ldapauth.git"
+    "url": "git://github.com/vesse/node-ldapauth.git"
   },
   "engines": ["node >=0.8.0"],
   "dependencies": {

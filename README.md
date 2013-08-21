@@ -1,7 +1,25 @@
-A simple node.js lib to authenticate against an LDAP server.
+Fork of [node-ldapauth](https://github.com/trentm/node-ldapauth) - A simple node.js lib to authenticate against an LDAP server.
 
+## About the fork
 
-# Usage
+This fork was created and published because of an urgent need to get newer
+version of [ldapjs](http://ldapjs.org/) in use to
+[passport-ldapauth](https://github.com/vesse/passport-ldapauth) since the newer
+version supports passing `tlsOptions` to the TLS module. Once the original
+module is updated I will likely abandon the fork.
+
+Changes in this fork include:
+
+* ldapjs upgraded from 0.5.6 to 0.6.3 [#11](https://github.com/trentm/node-ldapauth/issues/11),
+[#12](https://github.com/trentm/node-ldapauth/issues/12)
+* use global search/replace of `{{username}}` [#10](https://github.com/trentm/node-ldapauth/issues/10)
+* enable defining timeouts [#12](https://github.com/trentm/node-ldapauth/issues/12)
+* enable defining attributes to return from LDAP server [#8](https://github.com/trentm/node-ldapauth/issues/10)
+
+The additional options the changes above introduce are `searchAttributes`,
+`timeout`, `connectTimeout`, and `tlsOptions`.
+
+## Usage
 
     var LdapAuth = require('ldapauth');
     var options = {
@@ -15,22 +33,22 @@ A simple node.js lib to authenticate against an LDAP server.
     auth.close(function(err) { ... })
 
 
-# Install
+## Install
 
     npm install ldapauth
 
 
-# License
+## License
 
 MIT. See "LICENSE" file.
 
 
-# `LdapAuth` Config Options
+## `LdapAuth` Config Options
 
-[Use the source Luke](https://github.com/trentm/node-ldapauth/blob/master/lib/ldapauth.js#L25-53)
+[Use the source Luke](https://github.com/trentm/node-ldapauth/blob/master/lib/ldapauth.js#L25-55)
 
 
-# express/connect basicAuth example
+## express/connect basicAuth example
 
     var connect = require('connect');
     var LdapAuth = require('ldapauth');
@@ -66,7 +84,7 @@ MIT. See "LICENSE" file.
     });
 
 
-# Development
+## Development
 
 Check coding style before commit:
 
