@@ -16,7 +16,7 @@ Changes in this fork include:
 * enable defining attributes to return from LDAP server ([#8](https://github.com/trentm/node-ldapauth/issues/10))
 * enable anonymous binding ([#2](https://github.com/trentm/node-ldapauth/issues/2))
 * enable defining seach scope
-* clients are unbound in `close()`
+* clients are unbound in `close()` ([#3](https://github.com/trentm/node-ldapauth/issues/3))
 
 The additional options the changes above introduce are `searchScope`, `searchAttributes`,
 `timeout`, `connectTimeout`, and `tlsOptions`. From the original options `adminDn` and `adminPassword` are now optional.
