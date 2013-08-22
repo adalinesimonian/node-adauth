@@ -10,14 +10,14 @@ module is updated I will likely abandon the fork.
 
 Changes in this fork include:
 
-* ldapjs upgraded from 0.5.6 to 0.6.3 [#11](https://github.com/trentm/node-ldapauth/issues/11),
-[#12](https://github.com/trentm/node-ldapauth/issues/12)
-* use global search/replace of `{{username}}` [#10](https://github.com/trentm/node-ldapauth/issues/10)
-* enable defining timeouts [#12](https://github.com/trentm/node-ldapauth/issues/12)
-* enable defining attributes to return from LDAP server [#8](https://github.com/trentm/node-ldapauth/issues/10)
+* ldapjs upgraded from 0.5.6 to 0.6.3 ([#11](https://github.com/trentm/node-ldapauth/issues/11), [#12](https://github.com/trentm/node-ldapauth/issues/12))
+* use global search/replace of `{{username}}` ([#10](https://github.com/trentm/node-ldapauth/issues/10))
+* enable defining timeouts ([#12](https://github.com/trentm/node-ldapauth/issues/12))
+* enable defining attributes to return from LDAP server ([#8](https://github.com/trentm/node-ldapauth/issues/10))
+* enable anonymous binding ([#2](https://github.com/trentm/node-ldapauth/issues/2))
 
 The additional options the changes above introduce are `searchAttributes`,
-`timeout`, `connectTimeout`, and `tlsOptions`.
+`timeout`, `connectTimeout`, and `tlsOptions`. From the original options `adminDn` and `adminPassword` are now optional.
 
 ## Usage
 
