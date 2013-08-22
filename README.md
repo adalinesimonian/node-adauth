@@ -15,8 +15,10 @@ Changes in this fork include:
 * enable defining timeouts ([#12](https://github.com/trentm/node-ldapauth/issues/12))
 * enable defining attributes to return from LDAP server ([#8](https://github.com/trentm/node-ldapauth/issues/10))
 * enable anonymous binding ([#2](https://github.com/trentm/node-ldapauth/issues/2))
+* enable defining seach scope
+* clients are unbound in `close()`
 
-The additional options the changes above introduce are `searchAttributes`,
+The additional options the changes above introduce are `searchScope`, `searchAttributes`,
 `timeout`, `connectTimeout`, and `tlsOptions`. From the original options `adminDn` and `adminPassword` are now optional.
 
 ## Usage
@@ -45,7 +47,7 @@ MIT. See "LICENSE" file.
 
 ## `LdapAuth` Config Options
 
-[Use the source Luke](https://github.com/vesse/node-ldapauth-fork/blob/master/lib/ldapauth.js#L25-55)
+[Use the source Luke](https://github.com/vesse/node-ldapauth-fork/blob/master/lib/ldapauth.js#L25-57)
 
 
 ## express/connect basicAuth example
