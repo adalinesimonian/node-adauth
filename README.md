@@ -6,7 +6,7 @@ This fork was created and published because of an urgent need to get newer
 version of [ldapjs](http://ldapjs.org/) in use to
 [passport-ldapauth](https://github.com/vesse/passport-ldapauth) since the newer
 version supports passing `tlsOptions` to the TLS module. Once the original
-module is updated I will likely abandon the fork.
+module is updated I will likely deprecate the fork.
 
 Changes in this fork include:
 
@@ -17,6 +17,7 @@ Changes in this fork include:
 * enable anonymous binding ([#2](https://github.com/trentm/node-ldapauth/issues/2))
 * enable defining seach scope
 * clients are unbound in `close()` ([#3](https://github.com/trentm/node-ldapauth/issues/3))
+* `bcrypt` is an optional dependency ([#13](https://github.com/trentm/node-ldapauth/pull/13), also affects [#9](https://github.com/trentm/node-ldapauth/issues/9))
 
 The additional options the changes above introduce are `searchScope`, `searchAttributes`,
 `timeout`, `connectTimeout`, and `tlsOptions`. From the original options `adminDn` and `adminPassword` are now optional.
