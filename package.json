@@ -23,9 +23,9 @@
   ],
   "dependencies": {
     "ldapjs": "0.6.3",
-    "lru-cache": "2.0.4"
+    "lru-cache": "2.3.1"
   },
   "optionalDependencies": {
-    "bcrypt": "0.7.5"
+    "bcrypt": "0.7.7"
   }
 }
