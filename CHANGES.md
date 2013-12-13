@@ -1,5 +1,17 @@
 # node-ldapauth-fork Changelog
 
+## 2.2.11
+
+- [passport-ldapauth issue #3] Update to ldapjs 0.7.0 fixes unhandled errors when using anonymous binding
+
+## 2.2.10
+
+- Try to bind with empty `adminDn` string (undefined/null equals no admin bind)
+
+## 2.2.9
+
+- [ldapauth issue #13] bcrypt as an optional dependency
+
 ## 2.2.8
 
 - [ldapauth issue #2] support anonymous binding
