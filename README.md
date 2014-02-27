@@ -19,8 +19,7 @@ Changes in this fork include:
 * clients are unbound in `close()` ([#3](https://github.com/trentm/node-ldapauth/issues/3))
 * `bcrypt` is an optional dependency ([#13](https://github.com/trentm/node-ldapauth/pull/13), also affects [#9](https://github.com/trentm/node-ldapauth/issues/9))
 
-The additional options the changes above introduce are `searchScope`, `searchAttributes`,
-`timeout`, `connectTimeout`, and `tlsOptions`. From the original options `adminDn` and `adminPassword` are now optional.
+Multiple [ldapjs](http://ldapjs.org/) client options have been made available. From the original options `adminDn` and `adminPassword` are optional.
 
 ## Usage
 
@@ -48,7 +47,7 @@ MIT. See "LICENSE" file.
 
 ## `LdapAuth` Config Options
 
-[Use the source Luke](https://github.com/vesse/node-ldapauth-fork/blob/master/lib/ldapauth.js#L25-57)
+[Use the source Luke](https://github.com/vesse/node-ldapauth-fork/blob/master/lib/ldapauth.js#L25-67)
 
 
 ## express/connect basicAuth example
@@ -85,15 +84,3 @@ MIT. See "LICENSE" file.
         callback(err, user)
       });
     });
-
-
-## Development
-
-Check coding style before commit:
-
-    make check
-
-To cut a release (tagging, npm publish, etc., see
-<https://github.com/trentm/cutarelease> for details):
-
-    make cutarelease
