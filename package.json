@@ -22,7 +22,7 @@
     "node >=0.8.0"
   ],
   "dependencies": {
-    "ldapjs": "0.7.0",
+    "ldapjs": "0.7.1",
     "lru-cache": "2.5.0"
   },
   "optionalDependencies": {
