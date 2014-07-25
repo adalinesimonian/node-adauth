@@ -1,5 +1,13 @@
 # node-ldapauth-fork Changelog
 
+## 2.2.14
+
+- [issue #4] Log error properties code, name, and message instead of the object
+
+## 2.2.12
+
+- [issue #1] Add more ldapjs options
+
 ## 2.2.11
 
 - [passport-ldapauth issue #3] Update to ldapjs 0.7.0 fixes unhandled errors when using anonymous binding
