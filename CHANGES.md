@@ -1,5 +1,9 @@
 # node-ldapauth-fork Changelog
 
+## 2.2.15
+
+- [issue #5] Handle missing bcrypt and throw a explanatory exception instead
+
 ## 2.2.14
 
 - [issue #4] Log error properties code, name, and message instead of the object
