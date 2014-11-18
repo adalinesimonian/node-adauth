@@ -1,5 +1,9 @@
 # node-ldapauth-fork Changelog
 
+## 2.2.16
+
+- Added option `includeRaw` for including `entry.raw` to the returned object (relates to ldapjs issue #238)
+
 ## 2.2.15
 
 - [issue #5] Handle missing bcrypt and throw a explanatory exception instead
