@@ -1,5 +1,9 @@
 # node-ldapauth-fork Changelog
 
+## 2.2.17
+
+- Added `bindCredentials` option. Now defaulting to same names as ldapjs.
+
 ## 2.2.16
 
 - Added option `includeRaw` for including `entry.raw` to the returned object (relates to ldapjs issue #238)
