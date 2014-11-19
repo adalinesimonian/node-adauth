@@ -47,7 +47,7 @@ MIT. See "LICENSE" file.
 
 ## `LdapAuth` Config Options
 
-[Use the source Luke](https://github.com/vesse/node-ldapauth-fork/blob/master/lib/ldapauth.js#L25-81)
+[Use the source Luke](https://github.com/vesse/node-ldapauth-fork/blob/master/lib/ldapauth.js#L25-76)
 
 
 ## express/connect basicAuth example
@@ -59,8 +59,8 @@ MIT. See "LICENSE" file.
     var config = {
       ldap: {
         url: "ldaps://ldap.example.com:636",
-        adminDn: "uid=myadminusername,ou=users,o=example.com",
-        adminPassword: "mypassword",
+        bindDn: "uid=myadminusername,ou=users,o=example.com",
+        bindCredentials: "mypassword",
         searchBase: "ou=users,o=example.com",
         searchFilter: "(uid={{username}})"
       }
@@ -68,8 +68,8 @@ MIT. See "LICENSE" file.
 
     var ldap = new LdapAuth({
       url: config.ldap.url,
-      adminDn: config.ldap.adminDn,
-      adminPassword: config.ldap.adminPassword,
+      bindDn: config.ldap.bindDn,
+      bindCredentials: config.ldap.bindCredentials,
       searchBase: config.ldap.searchBase,
       searchFilter: config.ldap.searchFilter,
       //log4js: require('log4js'),
