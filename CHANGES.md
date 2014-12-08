@@ -1,5 +1,9 @@
 # node-ldapauth-fork Changelog
 
+## 2.2.18
+
+- [issue #8] Fix options to actually work as documented
+
 ## 2.2.17
 
 - Added `bindCredentials` option. Now defaulting to same names as ldapjs.
