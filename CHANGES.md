@@ -1,5 +1,9 @@
 # node-ldapauth-fork Changelog
 
+## 2.2.19
+
+- [issue #9] Configurable bind parameter. Thanks to @oanuna
+
 ## 2.2.18
 
 - [issue #8] Fix options to actually work as documented
