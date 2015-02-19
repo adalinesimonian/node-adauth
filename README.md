@@ -2,24 +2,9 @@ Fork of [node-ldapauth](https://github.com/trentm/node-ldapauth) - A simple node
 
 ## About the fork
 
-This fork was created and published because of an urgent need to get newer
-version of [ldapjs](http://ldapjs.org/) in use to
-[passport-ldapauth](https://github.com/vesse/passport-ldapauth) since the newer
-version supports passing `tlsOptions` to the TLS module. Once the original
-module is updated I will likely deprecate the fork.
+This fork was originally created and published because of an urgent need to get newer version of [ldapjs](http://ldapjs.org/) in use to [passport-ldapauth](https://github.com/vesse/passport-ldapauth) since the newer version supported passing `tlsOptions` to the TLS module. Since then a lot of issues from the original module ([#11](https://github.com/trentm/node-ldapauth/issues/11), [#12](https://github.com/trentm/node-ldapauth/issues/12), [#10](https://github.com/trentm/node-ldapauth/issues/10), [#12](https://github.com/trentm/node-ldapauth/issues/12), [#8](https://github.com/trentm/node-ldapauth/issues/10), [#2](https://github.com/trentm/node-ldapauth/issues/2), [#3](https://github.com/trentm/node-ldapauth/issues/3), [#13](https://github.com/trentm/node-ldapauth/pull/13), also affects [#9](https://github.com/trentm/node-ldapauth/issues/9)) have been fixed, and new features have been added as well.
 
-Changes in this fork include:
-
-* ldapjs upgraded from 0.5.6 to 0.6.3 ([#11](https://github.com/trentm/node-ldapauth/issues/11), [#12](https://github.com/trentm/node-ldapauth/issues/12))
-* use global search/replace of `{{username}}` ([#10](https://github.com/trentm/node-ldapauth/issues/10))
-* enable defining timeouts ([#12](https://github.com/trentm/node-ldapauth/issues/12))
-* enable defining attributes to return from LDAP server ([#8](https://github.com/trentm/node-ldapauth/issues/10))
-* enable anonymous binding ([#2](https://github.com/trentm/node-ldapauth/issues/2))
-* enable defining seach scope
-* clients are unbound in `close()` ([#3](https://github.com/trentm/node-ldapauth/issues/3))
-* `bcrypt` is an optional dependency ([#13](https://github.com/trentm/node-ldapauth/pull/13), also affects [#9](https://github.com/trentm/node-ldapauth/issues/9))
-
-Multiple [ldapjs](http://ldapjs.org/) client options have been made available. From the original options `adminDn` and `adminPassword` are optional.
+Multiple [ldapjs](http://ldapjs.org/) client options have been made available.
 
 ## Usage
 
