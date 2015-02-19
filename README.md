@@ -8,17 +8,18 @@ Multiple [ldapjs](http://ldapjs.org/) client options have been made available.
 
 ## Usage
 
-    var LdapAuth = require('ldapauth-fork');
-    var options = {
-        url: 'ldaps://ldap.example.com:663',
-        ...
-    };
-    var auth = new LdapAuth(options);
+```javascript
+var LdapAuth = require('ldapauth-fork');
+var options = {
+    url: 'ldaps://ldap.example.com:636',
     ...
-    auth.authenticate(username, password, function(err, user) { ... });
-    ...
-    auth.close(function(err) { ... })
-
+};
+var auth = new LdapAuth(options);
+...
+auth.authenticate(username, password, function(err, user) { ... });
+...
+auth.close(function(err) { ... })
+```
 
 ## Install
 
@@ -37,35 +38,37 @@ MIT. See "LICENSE" file.
 
 ## express/connect basicAuth example
 
-    var connect = require('connect');
-    var LdapAuth = require('ldapauth-fork');
+```javascript
+var connect = require('connect');
+var LdapAuth = require('ldapauth-fork');
 
-    // Config from a .json or .ini file or whatever.
-    var config = {
-      ldap: {
-        url: "ldaps://ldap.example.com:636",
-        bindDn: "uid=myadminusername,ou=users,o=example.com",
-        bindCredentials: "mypassword",
-        searchBase: "ou=users,o=example.com",
-        searchFilter: "(uid={{username}})"
-      }
-    };
+// Config from a .json or .ini file or whatever.
+var config = {
+  ldap: {
+    url: "ldaps://ldap.example.com:636",
+    bindDn: "uid=myadminusername,ou=users,o=example.com",
+    bindCredentials: "mypassword",
+    searchBase: "ou=users,o=example.com",
+    searchFilter: "(uid={{username}})"
+  }
+};
 
-    var ldap = new LdapAuth({
-      url: config.ldap.url,
-      bindDn: config.ldap.bindDn,
-      bindCredentials: config.ldap.bindCredentials,
-      searchBase: config.ldap.searchBase,
-      searchFilter: config.ldap.searchFilter,
-      //log4js: require('log4js'),
-      cache: true
-    });
+var ldap = new LdapAuth({
+  url: config.ldap.url,
+  bindDn: config.ldap.bindDn,
+  bindCredentials: config.ldap.bindCredentials,
+  searchBase: config.ldap.searchBase,
+  searchFilter: config.ldap.searchFilter,
+  //log4js: require('log4js'),
+  cache: true
+});
 
-    var basicAuthMiddleware = connect.basicAuth(function (username, password, callback) {
-      ldap.authenticate(username, password, function (err, user) {
-        if (err) {
-          console.log("LDAP auth error: %s", err);
-        }
-        callback(err, user)
-      });
-    });
+var basicAuthMiddleware = connect.basicAuth(function (username, password, callback) {
+  ldap.authenticate(username, password, function (err, user) {
+    if (err) {
+      console.log("LDAP auth error: %s", err);
+    }
+    callback(err, user)
+  });
+});
+```
