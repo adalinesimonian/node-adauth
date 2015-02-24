@@ -1,5 +1,25 @@
 # node-ldapauth-fork Changelog
 
+## 2.3.0
+
+- [passport-ldapauth issue #10] Added support for fetching user groups. If `groupSearchBase` and `groupSearchFilter` are defined, a group search is conducted after the user has succesfully authenticated. The found groups are stored to `user._groups`:
+
+```javascript
+new LdapAuth({
+  "url": "ldaps://ldap.example.com:636",
+  "adminDn": "cn=LdapAdmin,dc=local",
+  "adminPassword": "LdapAdminPassword",
+  "searchBase": "dc=users,dc=local",
+  "searchFilter": "(&(objectClass=person)(sAMAccountName={{username}}))",
+  "searchAttributes": [
+    "dn", "cn", "givenName", "name", "memberOf", "sAMAccountName"
+  ],
+  "groupSearchBase": "dc=groups,dc=local",
+  "groupSearchFilter": "(member={{dn}})",
+  "groupSearchAttributes": ["dn", "cn", "sAMAccountName"]
+});
+```
+
 ## 2.2.19
 
 - [issue #9] Configurable bind parameter. Thanks to @oanuna
