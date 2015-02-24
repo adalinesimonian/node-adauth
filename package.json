@@ -26,6 +26,6 @@
     "lru-cache": "2.5.0"
   },
   "optionalDependencies": {
-    "bcrypt": "0.7.8"
+    "bcrypt": "0.8.1"
   }
 }
