@@ -33,7 +33,7 @@ MIT. See "LICENSE" file.
 
 ## `LdapAuth` Config Options
 
-[Use the source Luke](https://github.com/vesse/node-ldapauth-fork/blob/master/lib/ldapauth.js#L25-79)
+[Use the source Luke](https://github.com/vesse/node-ldapauth-fork/blob/master/lib/ldapauth.js#L25-93)
 
 
 ## express/connect basicAuth example
