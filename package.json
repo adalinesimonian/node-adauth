@@ -22,10 +22,8 @@
     "node >=0.8.0"
   ],
   "dependencies": {
+    "bcryptjs": "2.1.0",
     "ldapjs": "0.7.1",
     "lru-cache": "2.5.0"
-  },
-  "optionalDependencies": {
-    "bcryptjs": "2.1.0"
   }
 }

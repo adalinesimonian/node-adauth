@@ -1,5 +1,9 @@
 # node-ldapauth-fork Changelog
 
+## 2.3.1
+
+- [issue #14] Use bcryptjs instead of the C++ version.
+
 ## 2.3.0
 
 - [passport-ldapauth issue #10] Added support for fetching user groups. If `groupSearchBase` and `groupSearchFilter` are defined, a group search is conducted after the user has succesfully authenticated. The found groups are stored to `user._groups`:
