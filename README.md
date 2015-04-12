@@ -1,5 +1,18 @@
 Fork of [node-ldapauth](https://github.com/trentm/node-ldapauth) - A simple node.js lib to authenticate against an LDAP server.
 
+## Node v0.12 / `dtrace-provider` issue
+
+Currently the latest released version of [ldapjs](https://github.com/mcavage/node-ldapjs) which this module depends on does not install succesfully on Node v0.12 (see [issue #258](https://github.com/mcavage/node-ldapjs/issues/258)) due to old `dtrace-provider` dependency. To work around the issue, add dependency to `ldapjs` master to your `package.json`:
+
+```json
+{
+  "dependencies": {
+    "ldapjs": "mcavage/node-ldapjs",
+    "ldapauth-fork": "2.3.1"
+  }
+}
+```
+
 ## About the fork
 
 This fork was originally created and published because of an urgent need to get newer version of [ldapjs](http://ldapjs.org/) in use to [passport-ldapauth](https://github.com/vesse/passport-ldapauth) since the newer version supported passing `tlsOptions` to the TLS module. Since then a lot of issues from the original module ([#2](https://github.com/trentm/node-ldapauth/issues/2), [#3](https://github.com/trentm/node-ldapauth/issues/3), [#8](https://github.com/trentm/node-ldapauth/issues/8), [#10](https://github.com/trentm/node-ldapauth/issues/10), [#11](https://github.com/trentm/node-ldapauth/issues/11), [#12](https://github.com/trentm/node-ldapauth/issues/12), [#13](https://github.com/trentm/node-ldapauth/pull/13)) have been fixed, and new features have been added as well.
