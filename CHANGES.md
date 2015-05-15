@@ -1,5 +1,9 @@
 # node-ldapauth-fork Changelog
 
+## 2.3.2
+
+- [issue #19] Added messages to options asserts
+
 ## 2.3.1
 
 - [issue #14] Use bcryptjs instead of the C++ version.
