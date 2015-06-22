@@ -1,5 +1,10 @@
 # Change log
 
+## 0.1.1
+### Fixed
+- Unhandled case where `user.memberOf` may be a string object instead of an
+  array, leading to an error when `memberOf.unshift` is attempted
+
 ## 0.1.0
 First working version after being forked from node-ldapauth-fork
 
