@@ -1,7 +1,8 @@
 #
 # Copyright (c) 2012 Trent Mick
+# Copyright (c) 2015 Vartan Simonian
 #
-# node-ldapauth Makefile
+# node-adauth Makefile
 #
 
 #---- Files
@@ -14,10 +15,6 @@ JSSTYLE_FILES := $(shell find lib -name *.js)
 
 all:
 
-.PHONY: cutarelease
-cutarelease:
-	./tools/cutarelease.py -p ldapauth -f package.json
-
 .PHONY: check-jsstyle
 check-jsstyle: $(JSSTYLE_FILES)
 	./tools/jsstyle -o indent=2,doxygen,unparenthesized-return=0,blank-after-start-comment=0 $(JSSTYLE_FILES)
@@ -25,7 +22,3 @@ check-jsstyle: $(JSSTYLE_FILES)
 .PHONY: check
 check: check-jsstyle
 	@echo "Check ok."
-
-.PHONY: prepush
-prepush: check test
-	@echo "Okay to push."

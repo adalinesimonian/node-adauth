@@ -1,42 +1,23 @@
-Fork of [node-ldapauth](https://github.com/trentm/node-ldapauth) - A simple node.js lib to authenticate against an LDAP server.
+## node-adauth
 
-## Node v0.12 / `dtrace-provider` issue
-
-Currently the latest released version of [ldapjs](https://github.com/mcavage/node-ldapjs) which this module depends on does not install succesfully on Node v0.12 on Mac (see [issue #258](https://github.com/mcavage/node-ldapjs/issues/258)) due to old `dtrace-provider` dependency. To work around the issue, add dependency to `ldapjs` master to your `package.json`:
-
-```json
-{
-  "dependencies": {
-    "ldapjs": "mcavage/node-ldapjs",
-    "ldapauth-fork": "2.3.1"
-  }
-}
-```
-
-## About the fork
-
-This fork was originally created and published because of an urgent need to get newer version of [ldapjs](http://ldapjs.org/) in use to [passport-ldapauth](https://github.com/vesse/passport-ldapauth) since the newer version supported passing `tlsOptions` to the TLS module. Since then a lot of issues from the original module ([#2](https://github.com/trentm/node-ldapauth/issues/2), [#3](https://github.com/trentm/node-ldapauth/issues/3), [#8](https://github.com/trentm/node-ldapauth/issues/8), [#10](https://github.com/trentm/node-ldapauth/issues/10), [#11](https://github.com/trentm/node-ldapauth/issues/11), [#12](https://github.com/trentm/node-ldapauth/issues/12), [#13](https://github.com/trentm/node-ldapauth/pull/13)) have been fixed, and new features have been added as well.
-
-Multiple [ldapjs](http://ldapjs.org/) client options have been made available.
+Fork of [node-ldapauth-fork](https://github.com/vesse/node-ldapauth-fork) targeted towards use with an Active Directory domain.
 
 ## Usage
 
 ```javascript
-var LdapAuth = require('ldapauth-fork');
+var ADAuth = require('adauth');
 var options = {
-    url: 'ldaps://ldap.example.com:636',
-    ...
+    url: 'ldaps://corp.example.com:636',
+    domainDn: 'dc=example,dc=com'
 };
-var auth = new LdapAuth(options);
-...
+var auth = new ADAuth(options);
 auth.authenticate(username, password, function(err, user) { ... });
-...
 auth.close(function(err) { ... })
 ```
 
 ## Install
 
-    npm install ldapauth-fork
+    npm install adauth
 
 
 ## License
@@ -44,42 +25,33 @@ auth.close(function(err) { ... })
 MIT. See "LICENSE" file.
 
 
-## `LdapAuth` Config Options
+## `ADAuth` Config Options
 
-[Use the source Luke](https://github.com/vesse/node-ldapauth-fork/blob/master/lib/ldapauth.js#L25-93)
+[Use the source Luke](https://github.com/vsimonian/node-adauth/blob/master/lib/adauth.js#L25-104)
 
 
 ## express/connect basicAuth example
 
 ```javascript
 var connect = require('connect');
-var LdapAuth = require('ldapauth-fork');
+var ADAuth = require('adauth');
 
 // Config from a .json or .ini file or whatever.
 var config = {
-  ldap: {
-    url: "ldaps://ldap.example.com:636",
-    bindDn: "uid=myadminusername,ou=users,o=example.com",
+  ad: {
+    url: "ldaps://corp.example.com:636",
+    bindDn: "CN=LDAP User,OU=Users,OU=MyBusiness,DC=example,DC=com",
     bindCredentials: "mypassword",
-    searchBase: "ou=users,o=example.com",
-    searchFilter: "(uid={{username}})"
+    searchBase: "OU=Users,OU=MyBusiness,DC=example,DC=com"
   }
 };
 
-var ldap = new LdapAuth({
-  url: config.ldap.url,
-  bindDn: config.ldap.bindDn,
-  bindCredentials: config.ldap.bindCredentials,
-  searchBase: config.ldap.searchBase,
-  searchFilter: config.ldap.searchFilter,
-  //log4js: require('log4js'),
-  cache: true
-});
+var ad = new ADAuth(config.ad);
 
 var basicAuthMiddleware = connect.basicAuth(function (username, password, callback) {
-  ldap.authenticate(username, password, function (err, user) {
+  ad.authenticate(username, password, function (err, user) {
     if (err) {
-      console.log("LDAP auth error: %s", err);
+      console.log("AD auth error: %s", err);
     }
     callback(err, user)
   });
