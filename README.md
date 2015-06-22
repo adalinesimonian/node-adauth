@@ -1,6 +1,7 @@
 ## node-adauth
 
-Fork of [node-ldapauth-fork](https://github.com/vesse/node-ldapauth-fork) targeted towards use with an Active Directory domain.
+Fork of [node-ldapauth-fork](https://github.com/vesse/node-ldapauth-fork)
+targeted towards use with an Active Directory domain.
 
 ## Usage
 
@@ -17,7 +18,7 @@ auth.close(function(err) { ... })
 
 ## Install
 
-    npm install adauth
+    $ npm install adauth
 
 
 ## License
@@ -25,9 +26,10 @@ auth.close(function(err) { ... })
 MIT. See "LICENSE" file.
 
 
-## `ADAuth` Config Options
+## Configuration
 
-[Use the source Luke](https://github.com/vsimonian/node-adauth/blob/master/lib/adauth.js#L25-104)
+[Use the source Luke](
+https://github.com/vsimonian/node-adauth/blob/master/lib/adauth.js#L25-110)
 
 
 ## express/connect basicAuth example
@@ -48,7 +50,8 @@ var config = {
 
 var ad = new ADAuth(config.ad);
 
-var basicAuthMiddleware = connect.basicAuth(function (username, password, callback) {
+var basicAuthMiddleware = connect.basicAuth(
+  function (username, password, callback) {
   ad.authenticate(username, password, function (err, user) {
     if (err) {
       console.log("AD auth error: %s", err);
