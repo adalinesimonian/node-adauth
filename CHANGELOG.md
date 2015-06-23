@@ -1,5 +1,10 @@
 # Change log
 
+## 0.1.2
+### Added
+- `objectGUID` attributes on objects are now converted to a human-readable
+  string format
+
 ## 0.1.1
 ### Fixed
 - Unhandled case where `user.memberOf` may be a string object instead of an
