@@ -45,6 +45,9 @@ var config = {
     bindDn: "CN=LDAP User,OU=Users,OU=MyBusiness,DC=example,DC=com",
     bindCredentials: "mypassword",
     searchBase: "OU=Users,OU=MyBusiness,DC=example,DC=com"
+    tlsOptions: {
+      ca: "./example-ca.cer"
+    }
   }
 };
 

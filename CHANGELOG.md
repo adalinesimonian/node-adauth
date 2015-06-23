@@ -1,5 +1,10 @@
 # Change log
 
+## 0.1.3
+### Added
+- Support for loading CA certificates for AD off of the file system or a web
+  server.
+
 ## 0.1.2
 ### Added
 - `objectGUID` attributes on objects are now converted to a human-readable
