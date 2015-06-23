@@ -1,6 +1,6 @@
 {
   "name": "adauth",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "main": "./lib/adauth.js",
   "description": "Authenticate against an Active Directory domain via LDAP",
   "author": "Vartan Simonian <vsimonianpress@gmail.com> (https://github.com/vsimonian)",
