@@ -1,5 +1,10 @@
 # Change log
 
+## 0.1.4
+### Fixed
+- `objectGUID` attributes are now serialized correctly. Prior, they would be
+  serialized into unusable strings, such as `{----------------}`.
+
 ## 0.1.3
 ### Added
 - Support for loading CA certificates for AD off of the file system or a web
