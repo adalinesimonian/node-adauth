@@ -29,7 +29,7 @@ MIT. See "LICENSE" file.
 ## Configuration
 
 [Use the source Luke](
-https://github.com/vsimonian/node-adauth/blob/master/lib/adauth.js#L25-110)
+https://github.com/adalinesimonian/node-adauth/blob/master/lib/adauth.js#L25-110)
 
 
 ## express/connect basicAuth example

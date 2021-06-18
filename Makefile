@@ -1,6 +1,6 @@
 #
 # Copyright (c) 2012 Trent Mick
-# Copyright (c) 2015 Vartan Simonian
+# Copyright (c) 2015 Adaline Valentina Simonian
 #
 # node-adauth Makefile
 #
