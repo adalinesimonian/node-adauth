@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Using constructor Throws with missing URL 1`] = `"AD domain controller LDAP URL not defined (options.url)"`;
+
+exports[`Using constructor Throws with missing domain DN 1`] = `"Domain DN not defined (options.domainDN)"`;
+
+exports[`Using constructor Throws with missing options 1`] = `"Options not provided"`;
+
+exports[`Using static create method Rejects with missing URL 1`] = `[AssertionError: AD domain controller LDAP URL not defined (options.url)]`;
+
+exports[`Using static create method Rejects with missing domain DN 1`] = `[AssertionError: Domain DN not defined (options.domainDN)]`;
+
+exports[`Using static create method Rejects with missing options 1`] = `[AssertionError: Options not provided]`;

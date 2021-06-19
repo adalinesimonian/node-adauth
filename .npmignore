@@ -1,4 +1,6 @@
+lib
+test
+
 .travis.yml
 .eslintrc.json
-test
 .editorconfig

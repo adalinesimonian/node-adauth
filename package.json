@@ -1,8 +1,11 @@
 {
   "name": "adauth",
-  "version": "0.1.4",
-  "main": "./lib/adauth.js",
-  "types": "./lib/adauth.d.ts",
+  "version": "1.0.0",
+  "main": "./dist/adauth.js",
+  "types": "./dist/adauth.d.ts",
+  "files": [
+    "./dist/**/*"
+  ],
   "description": "Authenticate against an Active Directory domain via LDAP",
   "author": {
     "name": "Adaline Valentina Simonian",
@@ -28,38 +31,51 @@
     "url": "https://github.com/adalinesimonian/node-adauth.git"
   },
   "engines": {
-    "node": ">=0.8.0"
+    "node": ">=12.22.1"
   },
   "scripts": {
-    "prepublishOnly": "npm run lint",
+    "build": "tsc",
+    "prepublish": "yarn lint && yarn build",
+    "prepublishOnly": "yarn lint && yarn build",
     "lint": "run-p lint:*",
     "lint:eslint": "eslint .",
     "lint:prettier": "prettier . --check",
-    "lint-watch": "watch 'npm run lint' . --wait 0.5",
+    "lint:types": "tsc --noEmit",
+    "lint-watch": "chokidar \"**/*.{ts,js}\" -i node_modules -c \"yarn lint\"",
     "format": "run-s format:eslint format:prettier",
     "format:eslint": "eslint . --fix",
     "format:prettier": "prettier . --write",
-    "pretest": "cd test && tsc",
-    "test": "cd test && node test.js"
+    "test": "yarn jest"
   },
   "dependencies": {
-    "@types/ldapjs": "^1.0.9",
     "bcryptjs": "^2.4.0",
     "ldapjs": "^2.2.1",
     "long": "^2.2.3",
     "lru-cache": "^6.0.0",
+    "make-fetch-happen": "^9.0.3",
     "sync-request": "^2.0.1",
     "valid-url": "^1.0.9"
   },
   "devDependencies": {
+    "@types/bcryptjs": "^2.4.2",
     "@types/bunyan": "^1.8.6",
-    "@types/node": "^14.14.7",
+    "@types/jest": "^26.0.23",
+    "@types/ldapjs": "^1.0.9",
+    "@types/long": "^4.0.1",
+    "@types/lru-cache": "^5.1.0",
+    "@types/make-fetch-happen": "^8.0.1",
+    "@types/node": "^12.0.0",
+    "@types/valid-url": "^1.0.3",
+    "@typescript-eslint/eslint-plugin": "^4.27.0",
+    "@typescript-eslint/parser": "^4.27.0",
     "bunyan": "^1.8.14",
-    "eslint": "^7.13.0",
+    "chokidar-cli": "^2.1.0",
+    "eslint": "^7.29.0",
     "eslint-config-prettier": "^8.3.0",
+    "jest": "^27.0.4",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.3.1",
-    "typescript": "^4.0.5",
-    "watch": "^1.0.2"
+    "ts-jest": "^27.0.3",
+    "typescript": "^4.3.4"
   }
 }

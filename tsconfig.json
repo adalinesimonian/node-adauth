@@ -2,9 +2,11 @@
   "compilerOptions": {
     "target": "es6",
     "module": "commonjs",
+    "esModuleInterop": true,
     "declaration": false,
     "noImplicitAny": false,
-    "removeComments": true
+    "removeComments": true,
+    "outDir": "./dist"
   },
-  "files": ["test.ts"]
+  "include": ["./lib/**/*"]
 }
