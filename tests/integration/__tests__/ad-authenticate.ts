@@ -20,15 +20,25 @@ afterEach(async () => {
   await auth.dispose()
 })
 
-test('Can authenticate against test AD server', async () => {
-  const user = await auth.authenticate(adUsername, adCredentials)
-  expect(user).toBeTruthy()
+describe('With valid credentials', () => {
+  test('Can authenticate against test AD server', async () => {
+    const user = await auth.authenticate(adUsername, adCredentials)
+    expect(user).toBeTruthy()
+  })
+
+  test('Can re-authenticate against test AD server', async () => {
+    const user1 = await auth.authenticate(adUsername, adCredentials)
+    expect(user1).toBeTruthy()
+    const user2 = await auth.authenticate(adUsername, adCredentials)
+    expect(user2).toBeTruthy()
+    expect(user1).toEqual(user2)
+  })
 })
 
-test('Can re-authenticate against test AD server', async () => {
-  const user1 = await auth.authenticate(adUsername, adCredentials)
-  expect(user1).toBeTruthy()
-  const user2 = await auth.authenticate(adUsername, adCredentials)
-  expect(user2).toBeTruthy()
-  expect(user1).toEqual(user2)
+describe('With invalid credentials', () => {
+  test('Fails authentication', () => {
+    return expect(
+      auth.authenticate('INVALID_USERNAME', 'INVALID_CREDENTIALS')
+    ).rejects.toBeTruthy()
+  })
 })

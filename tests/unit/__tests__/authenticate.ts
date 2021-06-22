@@ -1,17 +1,25 @@
 import ADAuth from '../../../lib/adauth'
+import ldapjs from 'ldapjs'
+import MockLdapClient from '../../mocks/ldap-client'
+import ADDumpReader from '../../mocks/ad-dump-reader'
+
+const dumpReader = new ADDumpReader()
+const dumpConfig = dumpReader.getConfig()
+
+jest.mock('ldapjs', () => ({
+  createClient: jest.fn(options => new MockLdapClient(options, dumpReader)),
+}))
+
+const ldap = ldapjs as jest.Mocked<typeof ldapjs>
 
 let auth: ADAuth
 
 beforeEach(async () => {
+  ldap.createClient.mockClear()
   auth = await ADAuth.create({
-    url: 'ldap://ldap.forumsys.com:389',
-    domainDN: 'dc=example,dc=com',
-    searchBase: 'dc=example,dc=com',
-    // Test server is not an AD server, so search filter is manually specified.
-    searchFilterBySAN: '(uid=riemann)',
+    url: dumpConfig.url,
+    domainDN: dumpConfig.domainDN,
     cache: true,
-    groupSearchFilter: '(member={{dn}})',
-    groupSearchBase: 'dc=example,dc=com',
   })
 
   auth.on('error', error => {
@@ -25,25 +33,24 @@ afterEach(async () => {
 })
 
 describe('With valid credentials', () => {
-  test('Can authenticate against test LDAP server', async () => {
-    // Test server is not an AD server, so DN is specified in place of username so
-    // that binding will work properly.
+  test('Authenticates', async () => {
     const user = await auth.authenticate(
-      'uid=riemann,dc=example,dc=com',
-      'password'
+      dumpConfig.username,
+      dumpConfig.credentials
     )
+    expect(user).toBeTruthy()
     expect(user).toMatchSnapshot()
   })
 
-  test('Can re-authenticate against test LDAP server', async () => {
+  test('Re-authenticates', async () => {
     const user1 = await auth.authenticate(
-      'uid=riemann,dc=example,dc=com',
-      'password'
+      dumpConfig.username,
+      dumpConfig.credentials
     )
     expect(user1).toBeTruthy()
     const user2 = await auth.authenticate(
-      'uid=riemann,dc=example,dc=com',
-      'password'
+      dumpConfig.username,
+      dumpConfig.credentials
     )
     expect(user2).toBeTruthy()
     expect(user1).toEqual(user2)
@@ -52,7 +59,7 @@ describe('With valid credentials', () => {
 })
 
 describe('With invalid credentials', () => {
-  test('Fails authentication', () => {
+  test('Fails authentication', async () => {
     return expect(
       auth.authenticate('INVALID_USERNAME', 'INVALID_CREDENTIALS')
     ).rejects.toMatchSnapshot()

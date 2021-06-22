@@ -46,6 +46,13 @@ const getSubset = <T, K extends keyof T>(
   }, {} as { [key in keyof T]: T[key] })
 }
 
+/**
+ * Washes an object clean by running it through JSON.stringify, then JSON.parse.
+ * @param obj The object to wash.
+ * @returns The washed object.
+ */
+const wash = (obj: any) => JSON.parse(JSON.stringify(obj))
+
 namespace ADAuth {
   export type Scope = 'base' | 'one' | 'sub'
 
@@ -155,6 +162,11 @@ namespace ADAuth {
      * Provides the secure TLS options passed to tls.connect in ldapjs
      */
     tlsOptions?: ConnectionOptions
+    /**
+     * If true, debug events are emitted with raw data returned from the server.
+     * May impact performance when enabled.
+     */
+    debug?: boolean
   }
 
   export interface SIDSearchOptions extends ldap.SearchOptions {
@@ -253,6 +265,45 @@ class ADAuth extends EventEmitter {
     }
   }
 
+  #emitDebugCall(
+    func: string,
+    {
+      args = [],
+      error,
+      resolve,
+    }: { args?: any[]; error?: Error; resolve?: any; async?: boolean } = {}
+  ): void {
+    this.emit('debug', {
+      call: func,
+      arguments: args,
+      error,
+      resolve,
+    })
+  }
+
+  #emitDebugSyncCall(
+    func: string,
+    {
+      args = [],
+      error,
+      return: returnValue,
+    }: { args?: any[]; error?: Error; return?: any; async?: boolean } = {}
+  ): void {
+    this.emit('debug', {
+      call: func,
+      arguments: args,
+      error,
+      return: returnValue,
+    })
+  }
+
+  #emitDebugEvent(event: string, data?: unknown): void {
+    this.emit('debug', {
+      event,
+      data,
+    })
+  }
+
   /**
    * If a logger was provided, logs the given message at the trace level.
    * @param formatString Format string to pass to the logger.
@@ -295,19 +346,40 @@ class ADAuth extends EventEmitter {
     searchOptions: ldap.SearchOptions = {}
   ): Promise<any[]> {
     this.#assertInitialised()
-    const { includeRaw } = this.options
+    const { includeRaw, debug } = this.options
 
     return await new Promise((resolve, reject) => {
+      let debugOptions
+      if (debug) {
+        // ldapjs modifies the options object so we need to take a snapshot of
+        // it before modification for debug purposes.
+        debugOptions = wash(searchOptions)
+      }
       this.#userClient.search(
         searchBase,
         searchOptions,
         (error, searchResult) => {
+          debug &&
+            this.#emitDebugCall('search', {
+              args: [searchBase, debugOptions],
+              error: error && wash(error),
+              resolve: wash(searchResult),
+            })
           if (error) {
             return reject(error)
           }
 
           const items = []
           searchResult.on('searchEntry', entry => {
+            debug &&
+              this.#emitDebugEvent('searchResult.searchEntry', {
+                searchArgs: [searchBase, debugOptions],
+                entry: Object.assign(wash(entry), {
+                  object: wash(entry.object),
+                  raw: wash(entry.raw),
+                  attributes: wash(entry.attributes),
+                }),
+              })
             items.push({
               ...entry.object,
               objectSid: entry.raw.objectSid
@@ -320,9 +392,21 @@ class ADAuth extends EventEmitter {
             })
           })
 
-          searchResult.on('error', reject)
+          searchResult.on('error', searchError => {
+            debug &&
+              this.#emitDebugEvent('searchResult.error', {
+                searchArgs: [searchBase, debugOptions],
+                error: wash(searchError),
+              })
+            reject(searchError)
+          })
 
           searchResult.on('end', result => {
+            debug &&
+              this.#emitDebugEvent('searchResult.end', {
+                searchArgs: [searchBase, debugOptions],
+                result: wash(result),
+              })
             if (result.status !== 0) {
               return reject(
                 new Error(`Non-zero status from LDAP search: ${result.status}`)
@@ -613,7 +697,7 @@ class ADAuth extends EventEmitter {
       this.#salt = await bcrypt.genSalt()
     }
 
-    const { tlsOptions, starttls } = this.options
+    const { tlsOptions, starttls, debug } = this.options
 
     if (typeof tlsOptions?.ca === 'string') {
       const { ca } = tlsOptions
@@ -636,7 +720,10 @@ class ADAuth extends EventEmitter {
 
     this.#userClient = ldap.createClient(this.clientOptions)
 
-    this.#userClient.on('error', error => this.#handleError(error))
+    this.#userClient.on('error', error => {
+      debug && this.#emitDebugEvent('error', { error: wash(error) })
+      this.#handleError(error)
+    })
 
     if (starttls) {
       this.#userClient.starttls(
@@ -646,7 +733,10 @@ class ADAuth extends EventEmitter {
       )
     }
 
-    this.#userClient.on('connectTimeout', error => this.#handleError(error))
+    this.#userClient.on('connectTimeout', error => {
+      debug && this.#emitDebugEvent('connectTimeout', { error: wash(error) })
+      this.#handleError(error)
+    })
 
     this.#initialised = true
   }
@@ -683,6 +773,8 @@ class ADAuth extends EventEmitter {
       }
     }
 
+    const { debug } = this.options
+
     // 1. Attempt to bind with the give credentials to validate them
     //
     // We are authenticating first so that AD can log failed signin attempts,
@@ -692,6 +784,11 @@ class ADAuth extends EventEmitter {
     try {
       await new Promise<void>((resolve, reject) => {
         this.#userClient.bind(username, password, error => {
+          debug &&
+            this.#emitDebugCall('bind', {
+              args: [username, password],
+              error: error && wash(error),
+            })
           if (error) {
             return reject(error)
           }
@@ -744,8 +841,16 @@ class ADAuth extends EventEmitter {
    */
   async close(): Promise<void> {
     this.#assertInitialised()
+    const { debug } = this.options
+
     await new Promise<void>(resolve => {
-      this.#userClient.unbind(() => resolve())
+      this.#userClient.unbind(error => {
+        debug &&
+          this.#emitDebugCall('unbind', {
+            error: error && wash(error),
+          })
+        resolve()
+      })
     })
   }
 
@@ -754,9 +859,12 @@ class ADAuth extends EventEmitter {
    */
   async dispose(): Promise<void> {
     if (this.#initialised) {
+      const { debug } = this.options
+
       await this.close()
       this.#initialised = false
       this.#userClient.destroy()
+      debug && this.#emitDebugSyncCall('destroy')
       this.#userClient = undefined
     }
   }

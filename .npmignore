@@ -1,6 +1,17 @@
 lib
-test
+tests
 
-.travis.yml
-.eslintrc.json
-.editorconfig
+test.config.js
+
+.github
+.vscode
+
+node_modules
+
+.yarn/*
+!.yarn/patches
+!.yarn/releases
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions
+.pnp.*

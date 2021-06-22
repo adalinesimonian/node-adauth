@@ -5,17 +5,27 @@ Fork of [node-ldapauth-fork](https://github.com/vesse/node-ldapauth-fork) target
 ## Usage
 
 ```javascript
-var ADAuth = require('adauth');
-var options = {
-    url: 'ldaps://corp.example.com:636',
-    domainDN: 'dc=example,dc=com'
-};
-var auth = new ADAuth(options);
-auth.on('error', function (err) {
-  console.error('ADAuth: ', err);
-});
-auth.authenticate(username, password, function(err, user) { ... });
-auth.close(function(err) { ... })
+import ADAuth from 'adauth'
+
+const options = {
+  url: 'ldaps://corp.example.com:636',
+  domainDN: 'dc=example,dc=com',
+}
+
+const auth = await ADAuth.create(options)
+
+// or
+
+const auth = new ADAuth(options)
+await auth.initialise()
+
+try {
+  const user = await auth.authenticate(username, password)
+} catch (error) {
+  console.error('Authentication failed: ', error)
+}
+
+await auth.dispose()
 ```
 
 `ADAuth` inherits from `EventEmitter`.
@@ -33,9 +43,7 @@ Required client options:
 
 ## Configuration
 
-- `bindDN` - Admin connection DN, e.g. `uid=myapp,ou=users,o=example.com`. Optional. If not given at all, admin client is not bound. Giving empty string may result in anonymous bind when allowed.
-- `bindCredentials` - Password for bindDN.
-- `searchBase` - The base DN from which to search for users by username. E.g. `ou=users,o=example.com`
+- `searchBase` - The base DN from which to search for users by username. E.g. `ou=users,dc=example,dc=com`
 - `searchFilterByDN` - Optional, default `(&(objectCategory=user)(objectClass=user)(distinguishedName={{dn}}))`. Search filter with which to find a user by FQDN.
 - `searchFilterByUPN` - Optional, default `(&(objectCategory=user)(objectClass=user)(userPrincipalName={{upn}}))`. Search filter with which to find a user by UPN. (user@domain.com)
 - `searchFilterBySAN` - Optional, default `(&(objectCategory=user)(objectClass=user)(samAccountName={{username}}))`. Search filter with which to find a user by their old-format Windows username.
@@ -64,7 +72,6 @@ Optional ldapjs options, see [ldapjs documentation](https://github.com/mcavage/n
 - `timeout`
 - `connectTimeout`
 - `idleTimeout`
-- `reconnect`
 - `strictDN`
 - `queueSize`
 - `queueTimeout`
@@ -74,49 +81,46 @@ Optional ldapjs options, see [ldapjs documentation](https://github.com/mcavage/n
 
 The AD authentication flow is usually:
 
-1. Bind the admin client using the given `bindDN` and `bindCredentials`
-2. Use the admin client to search for the user by substituting `{{username}}` from the `searchFilter` with given username
-3. If user is found, verify the given password by trying to bind the user client with the found AD user object and given password
-4. If password was correct and group search options were provided, search for the groups of the user
+1. Bind the client using the given username and credentials to verify the given password
+2. Use the client to search for the user by substituting `{{username}}` from the appropriate `searchFilter`
+3. Search for the groups of the user
 
 ## express/connect basicAuth example
 
 ```javascript
-var basicAuth = require('basic-auth');
-var ADAuth = require('adauth');
+import basicAuth from 'basic-auth'
+import ADAuth from 'adauth'
 
-var ad = new ADAuth({
+const ad = await ADAuth.create({
   url: "ldaps://corp.example.com:636",
-  bindDn: "CN=LDAP User,OU=Users,OU=MyBusiness,DC=example,DC=com",
-  bindCredentials: "mypassword",
-  searchBase: "OU=Users,OU=MyBusiness,DC=example,DC=com"
+  domainDN: "DC=example,DC=com",
+  searchBase: "OU=Users,OU=MyBusiness,DC=example,DC=com",
   tlsOptions: {
-    ca: "./example-ca.cer"
-  }
-  reconnect: true
-});
+    ca: "./example-ca.cer",
+  },
+  reconnect: true,
+})
 
-var rejectBasicAuth = function(res) {
-  res.statusCode = 401;
-  res.setHeader('WWW-Authenticate', 'Basic realm="Example"');
-  res.end('Access denied');
+const rejectBasicAuth = res => {
+  res.statusCode = 401
+  res.setHeader('WWW-Authenticate', 'Basic realm="Example"')
+  res.end('Access denied')
 }
 
-var basicAuthMiddleware = function(req, res, next) {
-  var credentials = basicAuth(req);
+const basicAuthMiddleware = (req, res, next) => {
+  const credentials = basicAuth(req)
   if (!credentials) {
-    return rejectBasicAuth(res);
+    return rejectBasicAuth(res)
   }
 
-  ad.authenticate(credentials.name, credentials.pass, function(err, user) {
-    if (err) {
-      return rejectBasicAuth(res);
-    }
-
-    req.user = user;
-    next();
-  });
-};
+  ad.authenticate(credentials.name, credentials.pass)
+    .then(user => {
+      req.user = user
+      next()
+    })
+    .catch(error => rejectBasicAuth(res))
+  })
+}
 ```
 
 ## License

@@ -2,11 +2,11 @@ import ADAuth from '../../../lib/adauth'
 
 describe('Using constructor', () => {
   test('Throws with missing options', () => {
-    expect(() => new (ADAuth as any)()).toThrowErrorMatchingSnapshot()
+    return expect(() => new (ADAuth as any)()).toThrowErrorMatchingSnapshot()
   })
 
   test('Throws with missing URL', () => {
-    expect(
+    return expect(
       () =>
         new ADAuth({
           domainDN: 'dc=example,dc=com',
@@ -35,11 +35,11 @@ describe('Using constructor', () => {
 
 describe('Using static create method', () => {
   test('Rejects with missing options', () => {
-    expect((ADAuth as any).create()).rejects.toMatchSnapshot()
+    return expect((ADAuth as any).create()).rejects.toMatchSnapshot()
   })
 
   test('Rejects with missing URL', () => {
-    expect(
+    return expect(
       ADAuth.create({
         domainDN: 'dc=example,dc=com',
       } as any)

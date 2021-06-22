@@ -1,0 +1,1678 @@
+{
+  "config": {
+    "url": "ldap://172.17.80.1:389",
+    "domainDN": "dc=adtest,dc=local",
+    "username": "tuser@adtest.local",
+    "credentials": "Password123"
+  },
+  "responses": {
+    "bind": {
+      "invalidCredentials": {
+        "error": {
+          "lde_message": "80090308: LdapErr: DSID-0C090434, comment: AcceptSecurityContext error, data 52e, v4f78\u0000",
+          "lde_dn": null
+        }
+      },
+      "validCredentials": [
+        {
+          "username": "tuser@adtest.local",
+          "credentials": "Password123",
+          "response": { "error": null }
+        }
+      ]
+    },
+    "unbind": {},
+    "errors": [],
+    "search": {
+      "[\"dc=adtest,dc=local\",{\"filter\":\"(&(objectCategory=user)(objectClass=user)(userPrincipalName=tuser@adtest.local))\",\"scope\":\"sub\"}]": {
+        "time": 13,
+        "error": null,
+        "resolve": {
+          "_events": {},
+          "_eventsCount": 1,
+          "_outstandingEmits": [],
+          "_opened": false
+        }
+      },
+      "[\"dc=adtest,dc=local\",{\"filter\":\"(&(objectCategory=group)(objectClass=group)(member=CN=Test User,OU=Partners,DC=adtest,DC=local))\",\"scope\":\"sub\"}]": {
+        "time": 21,
+        "error": null,
+        "resolve": {
+          "_events": {},
+          "_eventsCount": 1,
+          "_outstandingEmits": [],
+          "_opened": false
+        }
+      },
+      "[\"dc=adtest,dc=local\",{\"filter\":\"(objectSid=S-1-5-21-2050130036-2835941282-889556947-513)\",\"scope\":\"sub\"}]": {
+        "time": 25,
+        "error": null,
+        "resolve": {
+          "_events": {},
+          "_eventsCount": 1,
+          "_outstandingEmits": [],
+          "_opened": false
+        }
+      }
+    }
+  },
+  "searchResults": {
+    "[\"dc=adtest,dc=local\",{\"filter\":\"(&(objectCategory=user)(objectClass=user)(userPrincipalName=tuser@adtest.local))\",\"scope\":\"sub\"}]": {
+      "entries": [
+        {
+          "messageID": 2,
+          "protocolOp": 100,
+          "controls": [],
+          "log": {},
+          "objectName": "CN=Test User,OU=Partners,DC=adtest,DC=local",
+          "attributes": [
+            {
+              "type": "objectClass",
+              "_vals": [
+                { "type": "Buffer", "data": [116, 111, 112] },
+                { "type": "Buffer", "data": [112, 101, 114, 115, 111, 110] },
+                {
+                  "type": "Buffer",
+                  "data": [
+                    111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110,
+                    97, 108, 80, 101, 114, 115, 111, 110
+                  ]
+                },
+                { "type": "Buffer", "data": [117, 115, 101, 114] }
+              ]
+            },
+            {
+              "type": "cn",
+              "_vals": [
+                {
+                  "type": "Buffer",
+                  "data": [84, 101, 115, 116, 32, 85, 115, 101, 114]
+                }
+              ]
+            },
+            {
+              "type": "sn",
+              "_vals": [{ "type": "Buffer", "data": [85, 115, 101, 114] }]
+            },
+            {
+              "type": "givenName",
+              "_vals": [{ "type": "Buffer", "data": [84, 101, 115, 116] }]
+            },
+            {
+              "type": "distinguishedName",
+              "_vals": [
+                {
+                  "type": "Buffer",
+                  "data": [
+                    67, 78, 61, 84, 101, 115, 116, 32, 85, 115, 101, 114, 44,
+                    79, 85, 61, 80, 97, 114, 116, 110, 101, 114, 115, 44, 68,
+                    67, 61, 97, 100, 116, 101, 115, 116, 44, 68, 67, 61, 108,
+                    111, 99, 97, 108
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "instanceType",
+              "_vals": [{ "type": "Buffer", "data": [52] }]
+            },
+            {
+              "type": "whenCreated",
+              "_vals": [
+                {
+                  "type": "Buffer",
+                  "data": [
+                    50, 48, 50, 49, 48, 54, 49, 57, 50, 49, 51, 50, 53, 53, 46,
+                    48, 90
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "whenChanged",
+              "_vals": [
+                {
+                  "type": "Buffer",
+                  "data": [
+                    50, 48, 50, 49, 48, 54, 49, 57, 50, 49, 52, 53, 53, 54, 46,
+                    48, 90
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "uSNCreated",
+              "_vals": [{ "type": "Buffer", "data": [49, 50, 53, 52, 55] }]
+            },
+            {
+              "type": "memberOf",
+              "_vals": [
+                {
+                  "type": "Buffer",
+                  "data": [
+                    67, 78, 61, 67, 111, 110, 116, 114, 105, 98, 117, 116, 111,
+                    114, 115, 44, 67, 78, 61, 85, 115, 101, 114, 115, 44, 68,
+                    67, 61, 97, 100, 116, 101, 115, 116, 44, 68, 67, 61, 108,
+                    111, 99, 97, 108
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "uSNChanged",
+              "_vals": [{ "type": "Buffer", "data": [49, 50, 53, 53, 53] }]
+            },
+            {
+              "type": "name",
+              "_vals": [
+                {
+                  "type": "Buffer",
+                  "data": [84, 101, 115, 116, 32, 85, 115, 101, 114]
+                }
+              ]
+            },
+            {
+              "type": "objectGUID",
+              "_vals": [
+                {
+                  "type": "Buffer",
+                  "data": [
+                    253, 204, 179, 42, 55, 14, 104, 68, 142, 158, 100, 111, 113,
+                    191, 161, 215
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "userAccountControl",
+              "_vals": [{ "type": "Buffer", "data": [53, 49, 50] }]
+            },
+            {
+              "type": "badPwdCount",
+              "_vals": [{ "type": "Buffer", "data": [48] }]
+            },
+            {
+              "type": "codePage",
+              "_vals": [{ "type": "Buffer", "data": [48] }]
+            },
+            {
+              "type": "countryCode",
+              "_vals": [{ "type": "Buffer", "data": [48] }]
+            },
+            {
+              "type": "badPasswordTime",
+              "_vals": [{ "type": "Buffer", "data": [48] }]
+            },
+            {
+              "type": "lastLogoff",
+              "_vals": [{ "type": "Buffer", "data": [48] }]
+            },
+            {
+              "type": "lastLogon",
+              "_vals": [{ "type": "Buffer", "data": [48] }]
+            },
+            {
+              "type": "pwdLastSet",
+              "_vals": [
+                {
+                  "type": "Buffer",
+                  "data": [
+                    49, 51, 50, 54, 56, 54, 49, 49, 57, 55, 53, 53, 56, 50, 50,
+                    49, 51, 51
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "primaryGroupID",
+              "_vals": [{ "type": "Buffer", "data": [53, 49, 51] }]
+            },
+            {
+              "type": "objectSid",
+              "_vals": [
+                {
+                  "type": "Buffer",
+                  "data": [
+                    1, 5, 0, 0, 0, 0, 0, 5, 21, 0, 0, 0, 116, 128, 50, 122, 162,
+                    7, 9, 169, 211, 143, 5, 53, 78, 4, 0, 0
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "accountExpires",
+              "_vals": [
+                {
+                  "type": "Buffer",
+                  "data": [
+                    57, 50, 50, 51, 51, 55, 50, 48, 51, 54, 56, 53, 52, 55, 55,
+                    53, 56, 48, 55
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "logonCount",
+              "_vals": [{ "type": "Buffer", "data": [48] }]
+            },
+            {
+              "type": "sAMAccountName",
+              "_vals": [{ "type": "Buffer", "data": [116, 117, 115, 101, 114] }]
+            },
+            {
+              "type": "sAMAccountType",
+              "_vals": [
+                {
+                  "type": "Buffer",
+                  "data": [56, 48, 53, 51, 48, 54, 51, 54, 56]
+                }
+              ]
+            },
+            {
+              "type": "userPrincipalName",
+              "_vals": [
+                {
+                  "type": "Buffer",
+                  "data": [
+                    116, 117, 115, 101, 114, 64, 97, 100, 116, 101, 115, 116,
+                    46, 108, 111, 99, 97, 108
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "objectCategory",
+              "_vals": [
+                {
+                  "type": "Buffer",
+                  "data": [
+                    67, 78, 61, 80, 101, 114, 115, 111, 110, 44, 67, 78, 61, 83,
+                    99, 104, 101, 109, 97, 44, 67, 78, 61, 67, 111, 110, 102,
+                    105, 103, 117, 114, 97, 116, 105, 111, 110, 44, 68, 67, 61,
+                    97, 100, 116, 101, 115, 116, 44, 68, 67, 61, 108, 111, 99,
+                    97, 108
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "dSCorePropagationData",
+              "_vals": [
+                {
+                  "type": "Buffer",
+                  "data": [
+                    49, 54, 48, 49, 48, 49, 48, 49, 48, 48, 48, 48, 48, 48, 46,
+                    48, 90
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "lastLogonTimestamp",
+              "_vals": [
+                {
+                  "type": "Buffer",
+                  "data": [
+                    49, 51, 50, 54, 56, 54, 49, 50, 55, 53, 54, 48, 48, 52, 51,
+                    52, 57, 57
+                  ]
+                }
+              ]
+            }
+          ],
+          "connection": {
+            "connecting": false,
+            "_hadError": false,
+            "_parent": null,
+            "_host": null,
+            "_readableState": {
+              "objectMode": false,
+              "highWaterMark": 16384,
+              "buffer": { "head": null, "tail": null, "length": 0 },
+              "length": 0,
+              "pipes": [],
+              "flowing": true,
+              "ended": false,
+              "endEmitted": false,
+              "reading": false,
+              "constructed": true,
+              "sync": false,
+              "needReadable": true,
+              "emittedReadable": false,
+              "readableListening": false,
+              "resumeScheduled": false,
+              "errorEmitted": false,
+              "emitClose": false,
+              "autoDestroy": true,
+              "destroyed": false,
+              "errored": null,
+              "closed": false,
+              "closeEmitted": false,
+              "defaultEncoding": "utf8",
+              "awaitDrainWriters": null,
+              "multiAwaitDrain": false,
+              "readingMore": false,
+              "decoder": null,
+              "encoding": null
+            },
+            "_events": { "end": [null, null] },
+            "_eventsCount": 5,
+            "_writableState": {
+              "objectMode": false,
+              "highWaterMark": 16384,
+              "finalCalled": false,
+              "needDrain": false,
+              "ending": false,
+              "ended": false,
+              "finished": false,
+              "destroyed": false,
+              "decodeStrings": false,
+              "defaultEncoding": "utf8",
+              "length": 0,
+              "writing": false,
+              "corked": 0,
+              "sync": false,
+              "bufferProcessing": false,
+              "writecb": null,
+              "writelen": 0,
+              "afterWriteTickInfo": null,
+              "buffered": [],
+              "bufferedIndex": 0,
+              "allBuffers": true,
+              "allNoop": true,
+              "pendingcb": 0,
+              "constructed": true,
+              "prefinished": false,
+              "errorEmitted": false,
+              "emitClose": false,
+              "autoDestroy": true,
+              "errored": null,
+              "closed": false,
+              "closeEmitted": false
+            },
+            "allowHalfOpen": false,
+            "_sockname": null,
+            "_pendingData": null,
+            "_pendingEncoding": "",
+            "server": null,
+            "_server": null
+          },
+          "object": {
+            "dn": "CN=Test User,OU=Partners,DC=adtest,DC=local",
+            "controls": [],
+            "objectClass": ["top", "person", "organizationalPerson", "user"],
+            "cn": "Test User",
+            "sn": "User",
+            "givenName": "Test",
+            "distinguishedName": "CN=Test User,OU=Partners,DC=adtest,DC=local",
+            "instanceType": "4",
+            "whenCreated": "20210619213255.0Z",
+            "whenChanged": "20210619214556.0Z",
+            "uSNCreated": "12547",
+            "memberOf": "CN=Contributors,CN=Users,DC=adtest,DC=local",
+            "uSNChanged": "12555",
+            "name": "Test User",
+            "objectGUID": "�̳*7\u000ehD��doq���",
+            "userAccountControl": "512",
+            "badPwdCount": "0",
+            "codePage": "0",
+            "countryCode": "0",
+            "badPasswordTime": "0",
+            "lastLogoff": "0",
+            "lastLogon": "0",
+            "pwdLastSet": "132686119755822133",
+            "primaryGroupID": "513",
+            "objectSid": "\u0001\u0005\u0000\u0000\u0000\u0000\u0000\u0005\u0015\u0000\u0000\u0000t�2z�\u0007\t�ӏ\u00055N\u0004\u0000\u0000",
+            "accountExpires": "9223372036854775807",
+            "logonCount": "0",
+            "sAMAccountName": "tuser",
+            "sAMAccountType": "805306368",
+            "userPrincipalName": "tuser@adtest.local",
+            "objectCategory": "CN=Person,CN=Schema,CN=Configuration,DC=adtest,DC=local",
+            "dSCorePropagationData": "16010101000000.0Z",
+            "lastLogonTimestamp": "132686127560043499"
+          },
+          "raw": {
+            "dn": "CN=Test User,OU=Partners,DC=adtest,DC=local",
+            "controls": [],
+            "objectClass": [
+              { "type": "Buffer", "data": [116, 111, 112] },
+              { "type": "Buffer", "data": [112, 101, 114, 115, 111, 110] },
+              {
+                "type": "Buffer",
+                "data": [
+                  111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 97,
+                  108, 80, 101, 114, 115, 111, 110
+                ]
+              },
+              { "type": "Buffer", "data": [117, 115, 101, 114] }
+            ],
+            "cn": {
+              "type": "Buffer",
+              "data": [84, 101, 115, 116, 32, 85, 115, 101, 114]
+            },
+            "sn": { "type": "Buffer", "data": [85, 115, 101, 114] },
+            "givenName": { "type": "Buffer", "data": [84, 101, 115, 116] },
+            "distinguishedName": {
+              "type": "Buffer",
+              "data": [
+                67, 78, 61, 84, 101, 115, 116, 32, 85, 115, 101, 114, 44, 79,
+                85, 61, 80, 97, 114, 116, 110, 101, 114, 115, 44, 68, 67, 61,
+                97, 100, 116, 101, 115, 116, 44, 68, 67, 61, 108, 111, 99, 97,
+                108
+              ]
+            },
+            "instanceType": { "type": "Buffer", "data": [52] },
+            "whenCreated": {
+              "type": "Buffer",
+              "data": [
+                50, 48, 50, 49, 48, 54, 49, 57, 50, 49, 51, 50, 53, 53, 46, 48,
+                90
+              ]
+            },
+            "whenChanged": {
+              "type": "Buffer",
+              "data": [
+                50, 48, 50, 49, 48, 54, 49, 57, 50, 49, 52, 53, 53, 54, 46, 48,
+                90
+              ]
+            },
+            "uSNCreated": { "type": "Buffer", "data": [49, 50, 53, 52, 55] },
+            "memberOf": {
+              "type": "Buffer",
+              "data": [
+                67, 78, 61, 67, 111, 110, 116, 114, 105, 98, 117, 116, 111, 114,
+                115, 44, 67, 78, 61, 85, 115, 101, 114, 115, 44, 68, 67, 61, 97,
+                100, 116, 101, 115, 116, 44, 68, 67, 61, 108, 111, 99, 97, 108
+              ]
+            },
+            "uSNChanged": { "type": "Buffer", "data": [49, 50, 53, 53, 53] },
+            "name": {
+              "type": "Buffer",
+              "data": [84, 101, 115, 116, 32, 85, 115, 101, 114]
+            },
+            "objectGUID": {
+              "type": "Buffer",
+              "data": [
+                253, 204, 179, 42, 55, 14, 104, 68, 142, 158, 100, 111, 113,
+                191, 161, 215
+              ]
+            },
+            "userAccountControl": { "type": "Buffer", "data": [53, 49, 50] },
+            "badPwdCount": { "type": "Buffer", "data": [48] },
+            "codePage": { "type": "Buffer", "data": [48] },
+            "countryCode": { "type": "Buffer", "data": [48] },
+            "badPasswordTime": { "type": "Buffer", "data": [48] },
+            "lastLogoff": { "type": "Buffer", "data": [48] },
+            "lastLogon": { "type": "Buffer", "data": [48] },
+            "pwdLastSet": {
+              "type": "Buffer",
+              "data": [
+                49, 51, 50, 54, 56, 54, 49, 49, 57, 55, 53, 53, 56, 50, 50, 49,
+                51, 51
+              ]
+            },
+            "primaryGroupID": { "type": "Buffer", "data": [53, 49, 51] },
+            "objectSid": {
+              "type": "Buffer",
+              "data": [
+                1, 5, 0, 0, 0, 0, 0, 5, 21, 0, 0, 0, 116, 128, 50, 122, 162, 7,
+                9, 169, 211, 143, 5, 53, 78, 4, 0, 0
+              ]
+            },
+            "accountExpires": {
+              "type": "Buffer",
+              "data": [
+                57, 50, 50, 51, 51, 55, 50, 48, 51, 54, 56, 53, 52, 55, 55, 53,
+                56, 48, 55
+              ]
+            },
+            "logonCount": { "type": "Buffer", "data": [48] },
+            "sAMAccountName": {
+              "type": "Buffer",
+              "data": [116, 117, 115, 101, 114]
+            },
+            "sAMAccountType": {
+              "type": "Buffer",
+              "data": [56, 48, 53, 51, 48, 54, 51, 54, 56]
+            },
+            "userPrincipalName": {
+              "type": "Buffer",
+              "data": [
+                116, 117, 115, 101, 114, 64, 97, 100, 116, 101, 115, 116, 46,
+                108, 111, 99, 97, 108
+              ]
+            },
+            "objectCategory": {
+              "type": "Buffer",
+              "data": [
+                67, 78, 61, 80, 101, 114, 115, 111, 110, 44, 67, 78, 61, 83, 99,
+                104, 101, 109, 97, 44, 67, 78, 61, 67, 111, 110, 102, 105, 103,
+                117, 114, 97, 116, 105, 111, 110, 44, 68, 67, 61, 97, 100, 116,
+                101, 115, 116, 44, 68, 67, 61, 108, 111, 99, 97, 108
+              ]
+            },
+            "dSCorePropagationData": {
+              "type": "Buffer",
+              "data": [
+                49, 54, 48, 49, 48, 49, 48, 49, 48, 48, 48, 48, 48, 48, 46, 48,
+                90
+              ]
+            },
+            "lastLogonTimestamp": {
+              "type": "Buffer",
+              "data": [
+                49, 51, 50, 54, 56, 54, 49, 50, 55, 53, 54, 48, 48, 52, 51, 52,
+                57, 57
+              ]
+            }
+          }
+        }
+      ],
+      "end": {
+        "messageID": 2,
+        "protocolOp": 101,
+        "controls": [],
+        "log": {},
+        "status": 0,
+        "matchedDN": "",
+        "errorMessage": "",
+        "referrals": [],
+        "connection": {
+          "connecting": false,
+          "_hadError": false,
+          "_parent": null,
+          "_host": null,
+          "_readableState": {
+            "objectMode": false,
+            "highWaterMark": 16384,
+            "buffer": { "head": null, "tail": null, "length": 0 },
+            "length": 0,
+            "pipes": [],
+            "flowing": true,
+            "ended": false,
+            "endEmitted": false,
+            "reading": false,
+            "constructed": true,
+            "sync": false,
+            "needReadable": true,
+            "emittedReadable": false,
+            "readableListening": false,
+            "resumeScheduled": false,
+            "errorEmitted": false,
+            "emitClose": false,
+            "autoDestroy": true,
+            "destroyed": false,
+            "errored": null,
+            "closed": false,
+            "closeEmitted": false,
+            "defaultEncoding": "utf8",
+            "awaitDrainWriters": null,
+            "multiAwaitDrain": false,
+            "readingMore": false,
+            "decoder": null,
+            "encoding": null
+          },
+          "_events": { "end": [null, null] },
+          "_eventsCount": 5,
+          "_writableState": {
+            "objectMode": false,
+            "highWaterMark": 16384,
+            "finalCalled": false,
+            "needDrain": false,
+            "ending": false,
+            "ended": false,
+            "finished": false,
+            "destroyed": false,
+            "decodeStrings": false,
+            "defaultEncoding": "utf8",
+            "length": 0,
+            "writing": false,
+            "corked": 0,
+            "sync": false,
+            "bufferProcessing": false,
+            "writecb": null,
+            "writelen": 0,
+            "afterWriteTickInfo": null,
+            "buffered": [],
+            "bufferedIndex": 0,
+            "allBuffers": true,
+            "allNoop": true,
+            "pendingcb": 0,
+            "constructed": true,
+            "prefinished": false,
+            "errorEmitted": false,
+            "emitClose": false,
+            "autoDestroy": true,
+            "errored": null,
+            "closed": false,
+            "closeEmitted": false
+          },
+          "allowHalfOpen": false,
+          "_sockname": null,
+          "_pendingData": null,
+          "_pendingEncoding": "",
+          "server": null,
+          "_server": null
+        },
+        "attributes": [],
+        "notAttributes": [],
+        "sentEntries": 0
+      }
+    },
+    "[\"dc=adtest,dc=local\",{\"filter\":\"(&(objectCategory=group)(objectClass=group)(member=CN=Test User,OU=Partners,DC=adtest,DC=local))\",\"scope\":\"sub\"}]": {
+      "entries": [
+        {
+          "messageID": 3,
+          "protocolOp": 100,
+          "controls": [],
+          "log": {},
+          "objectName": "CN=Contributors,CN=Users,DC=adtest,DC=local",
+          "attributes": [
+            {
+              "type": "objectClass",
+              "_vals": [
+                { "type": "Buffer", "data": [116, 111, 112] },
+                { "type": "Buffer", "data": [103, 114, 111, 117, 112] }
+              ]
+            },
+            {
+              "type": "cn",
+              "_vals": [
+                {
+                  "type": "Buffer",
+                  "data": [
+                    67, 111, 110, 116, 114, 105, 98, 117, 116, 111, 114, 115
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "description",
+              "_vals": [
+                {
+                  "type": "Buffer",
+                  "data": [
+                    67, 111, 110, 116, 114, 105, 98, 117, 116, 111, 114, 115,
+                    32, 116, 111, 32, 116, 104, 101, 32, 111, 112, 101, 110, 32,
+                    115, 111, 117, 114, 99, 101, 32, 112, 114, 111, 106, 101,
+                    99, 116
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "member",
+              "_vals": [
+                {
+                  "type": "Buffer",
+                  "data": [
+                    67, 78, 61, 84, 101, 115, 116, 32, 85, 115, 101, 114, 44,
+                    79, 85, 61, 80, 97, 114, 116, 110, 101, 114, 115, 44, 68,
+                    67, 61, 97, 100, 116, 101, 115, 116, 44, 68, 67, 61, 108,
+                    111, 99, 97, 108
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "distinguishedName",
+              "_vals": [
+                {
+                  "type": "Buffer",
+                  "data": [
+                    67, 78, 61, 67, 111, 110, 116, 114, 105, 98, 117, 116, 111,
+                    114, 115, 44, 67, 78, 61, 85, 115, 101, 114, 115, 44, 68,
+                    67, 61, 97, 100, 116, 101, 115, 116, 44, 68, 67, 61, 108,
+                    111, 99, 97, 108
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "instanceType",
+              "_vals": [{ "type": "Buffer", "data": [52] }]
+            },
+            {
+              "type": "whenCreated",
+              "_vals": [
+                {
+                  "type": "Buffer",
+                  "data": [
+                    50, 48, 50, 49, 48, 54, 50, 48, 48, 52, 48, 56, 52, 55, 46,
+                    48, 90
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "whenChanged",
+              "_vals": [
+                {
+                  "type": "Buffer",
+                  "data": [
+                    50, 48, 50, 49, 48, 54, 50, 48, 48, 52, 48, 57, 51, 52, 46,
+                    48, 90
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "displayName",
+              "_vals": [
+                {
+                  "type": "Buffer",
+                  "data": [
+                    67, 111, 110, 116, 114, 105, 98, 117, 116, 111, 114, 115
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "uSNCreated",
+              "_vals": [{ "type": "Buffer", "data": [49, 50, 53, 55, 52] }]
+            },
+            {
+              "type": "uSNChanged",
+              "_vals": [{ "type": "Buffer", "data": [49, 50, 53, 55, 56] }]
+            },
+            {
+              "type": "name",
+              "_vals": [
+                {
+                  "type": "Buffer",
+                  "data": [
+                    67, 111, 110, 116, 114, 105, 98, 117, 116, 111, 114, 115
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "objectGUID",
+              "_vals": [
+                {
+                  "type": "Buffer",
+                  "data": [
+                    69, 203, 72, 227, 91, 134, 25, 76, 160, 240, 224, 44, 127,
+                    147, 169, 111
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "objectSid",
+              "_vals": [
+                {
+                  "type": "Buffer",
+                  "data": [
+                    1, 5, 0, 0, 0, 0, 0, 5, 21, 0, 0, 0, 116, 128, 50, 122, 162,
+                    7, 9, 169, 211, 143, 5, 53, 79, 4, 0, 0
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "sAMAccountName",
+              "_vals": [
+                {
+                  "type": "Buffer",
+                  "data": [
+                    67, 111, 110, 116, 114, 105, 98, 117, 116, 111, 114, 115
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "sAMAccountType",
+              "_vals": [
+                {
+                  "type": "Buffer",
+                  "data": [50, 54, 56, 52, 51, 53, 52, 53, 54]
+                }
+              ]
+            },
+            {
+              "type": "groupType",
+              "_vals": [
+                {
+                  "type": "Buffer",
+                  "data": [45, 50, 49, 52, 55, 52, 56, 51, 54, 52, 54]
+                }
+              ]
+            },
+            {
+              "type": "objectCategory",
+              "_vals": [
+                {
+                  "type": "Buffer",
+                  "data": [
+                    67, 78, 61, 71, 114, 111, 117, 112, 44, 67, 78, 61, 83, 99,
+                    104, 101, 109, 97, 44, 67, 78, 61, 67, 111, 110, 102, 105,
+                    103, 117, 114, 97, 116, 105, 111, 110, 44, 68, 67, 61, 97,
+                    100, 116, 101, 115, 116, 44, 68, 67, 61, 108, 111, 99, 97,
+                    108
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "dSCorePropagationData",
+              "_vals": [
+                {
+                  "type": "Buffer",
+                  "data": [
+                    49, 54, 48, 49, 48, 49, 48, 49, 48, 48, 48, 48, 48, 48, 46,
+                    48, 90
+                  ]
+                }
+              ]
+            }
+          ],
+          "connection": {
+            "connecting": false,
+            "_hadError": false,
+            "_parent": null,
+            "_host": null,
+            "_readableState": {
+              "objectMode": false,
+              "highWaterMark": 16384,
+              "buffer": { "head": null, "tail": null, "length": 0 },
+              "length": 0,
+              "pipes": [],
+              "flowing": true,
+              "ended": false,
+              "endEmitted": false,
+              "reading": false,
+              "constructed": true,
+              "sync": false,
+              "needReadable": true,
+              "emittedReadable": false,
+              "readableListening": false,
+              "resumeScheduled": false,
+              "errorEmitted": false,
+              "emitClose": false,
+              "autoDestroy": true,
+              "destroyed": false,
+              "errored": null,
+              "closed": false,
+              "closeEmitted": false,
+              "defaultEncoding": "utf8",
+              "awaitDrainWriters": null,
+              "multiAwaitDrain": false,
+              "readingMore": false,
+              "decoder": null,
+              "encoding": null
+            },
+            "_events": { "end": [null, null] },
+            "_eventsCount": 5,
+            "_writableState": {
+              "objectMode": false,
+              "highWaterMark": 16384,
+              "finalCalled": false,
+              "needDrain": false,
+              "ending": false,
+              "ended": false,
+              "finished": false,
+              "destroyed": false,
+              "decodeStrings": false,
+              "defaultEncoding": "utf8",
+              "length": 0,
+              "writing": false,
+              "corked": 0,
+              "sync": false,
+              "bufferProcessing": false,
+              "writecb": null,
+              "writelen": 0,
+              "afterWriteTickInfo": null,
+              "buffered": [],
+              "bufferedIndex": 0,
+              "allBuffers": true,
+              "allNoop": true,
+              "pendingcb": 0,
+              "constructed": true,
+              "prefinished": false,
+              "errorEmitted": false,
+              "emitClose": false,
+              "autoDestroy": true,
+              "errored": null,
+              "closed": false,
+              "closeEmitted": false
+            },
+            "allowHalfOpen": false,
+            "_sockname": null,
+            "_pendingData": null,
+            "_pendingEncoding": "",
+            "server": null,
+            "_server": null
+          },
+          "object": {
+            "dn": "CN=Contributors,CN=Users,DC=adtest,DC=local",
+            "controls": [],
+            "objectClass": ["top", "group"],
+            "cn": "Contributors",
+            "description": "Contributors to the open source project",
+            "member": "CN=Test User,OU=Partners,DC=adtest,DC=local",
+            "distinguishedName": "CN=Contributors,CN=Users,DC=adtest,DC=local",
+            "instanceType": "4",
+            "whenCreated": "20210620040847.0Z",
+            "whenChanged": "20210620040934.0Z",
+            "displayName": "Contributors",
+            "uSNCreated": "12574",
+            "uSNChanged": "12578",
+            "name": "Contributors",
+            "objectGUID": "E�H�[�\u0019L���,��o",
+            "objectSid": "\u0001\u0005\u0000\u0000\u0000\u0000\u0000\u0005\u0015\u0000\u0000\u0000t�2z�\u0007\t�ӏ\u00055O\u0004\u0000\u0000",
+            "sAMAccountName": "Contributors",
+            "sAMAccountType": "268435456",
+            "groupType": "-2147483646",
+            "objectCategory": "CN=Group,CN=Schema,CN=Configuration,DC=adtest,DC=local",
+            "dSCorePropagationData": "16010101000000.0Z"
+          },
+          "raw": {
+            "dn": "CN=Contributors,CN=Users,DC=adtest,DC=local",
+            "controls": [],
+            "objectClass": [
+              { "type": "Buffer", "data": [116, 111, 112] },
+              { "type": "Buffer", "data": [103, 114, 111, 117, 112] }
+            ],
+            "cn": {
+              "type": "Buffer",
+              "data": [67, 111, 110, 116, 114, 105, 98, 117, 116, 111, 114, 115]
+            },
+            "description": {
+              "type": "Buffer",
+              "data": [
+                67, 111, 110, 116, 114, 105, 98, 117, 116, 111, 114, 115, 32,
+                116, 111, 32, 116, 104, 101, 32, 111, 112, 101, 110, 32, 115,
+                111, 117, 114, 99, 101, 32, 112, 114, 111, 106, 101, 99, 116
+              ]
+            },
+            "member": {
+              "type": "Buffer",
+              "data": [
+                67, 78, 61, 84, 101, 115, 116, 32, 85, 115, 101, 114, 44, 79,
+                85, 61, 80, 97, 114, 116, 110, 101, 114, 115, 44, 68, 67, 61,
+                97, 100, 116, 101, 115, 116, 44, 68, 67, 61, 108, 111, 99, 97,
+                108
+              ]
+            },
+            "distinguishedName": {
+              "type": "Buffer",
+              "data": [
+                67, 78, 61, 67, 111, 110, 116, 114, 105, 98, 117, 116, 111, 114,
+                115, 44, 67, 78, 61, 85, 115, 101, 114, 115, 44, 68, 67, 61, 97,
+                100, 116, 101, 115, 116, 44, 68, 67, 61, 108, 111, 99, 97, 108
+              ]
+            },
+            "instanceType": { "type": "Buffer", "data": [52] },
+            "whenCreated": {
+              "type": "Buffer",
+              "data": [
+                50, 48, 50, 49, 48, 54, 50, 48, 48, 52, 48, 56, 52, 55, 46, 48,
+                90
+              ]
+            },
+            "whenChanged": {
+              "type": "Buffer",
+              "data": [
+                50, 48, 50, 49, 48, 54, 50, 48, 48, 52, 48, 57, 51, 52, 46, 48,
+                90
+              ]
+            },
+            "displayName": {
+              "type": "Buffer",
+              "data": [67, 111, 110, 116, 114, 105, 98, 117, 116, 111, 114, 115]
+            },
+            "uSNCreated": { "type": "Buffer", "data": [49, 50, 53, 55, 52] },
+            "uSNChanged": { "type": "Buffer", "data": [49, 50, 53, 55, 56] },
+            "name": {
+              "type": "Buffer",
+              "data": [67, 111, 110, 116, 114, 105, 98, 117, 116, 111, 114, 115]
+            },
+            "objectGUID": {
+              "type": "Buffer",
+              "data": [
+                69, 203, 72, 227, 91, 134, 25, 76, 160, 240, 224, 44, 127, 147,
+                169, 111
+              ]
+            },
+            "objectSid": {
+              "type": "Buffer",
+              "data": [
+                1, 5, 0, 0, 0, 0, 0, 5, 21, 0, 0, 0, 116, 128, 50, 122, 162, 7,
+                9, 169, 211, 143, 5, 53, 79, 4, 0, 0
+              ]
+            },
+            "sAMAccountName": {
+              "type": "Buffer",
+              "data": [67, 111, 110, 116, 114, 105, 98, 117, 116, 111, 114, 115]
+            },
+            "sAMAccountType": {
+              "type": "Buffer",
+              "data": [50, 54, 56, 52, 51, 53, 52, 53, 54]
+            },
+            "groupType": {
+              "type": "Buffer",
+              "data": [45, 50, 49, 52, 55, 52, 56, 51, 54, 52, 54]
+            },
+            "objectCategory": {
+              "type": "Buffer",
+              "data": [
+                67, 78, 61, 71, 114, 111, 117, 112, 44, 67, 78, 61, 83, 99, 104,
+                101, 109, 97, 44, 67, 78, 61, 67, 111, 110, 102, 105, 103, 117,
+                114, 97, 116, 105, 111, 110, 44, 68, 67, 61, 97, 100, 116, 101,
+                115, 116, 44, 68, 67, 61, 108, 111, 99, 97, 108
+              ]
+            },
+            "dSCorePropagationData": {
+              "type": "Buffer",
+              "data": [
+                49, 54, 48, 49, 48, 49, 48, 49, 48, 48, 48, 48, 48, 48, 46, 48,
+                90
+              ]
+            }
+          }
+        }
+      ],
+      "end": {
+        "messageID": 3,
+        "protocolOp": 101,
+        "controls": [],
+        "log": {},
+        "status": 0,
+        "matchedDN": "",
+        "errorMessage": "",
+        "referrals": [],
+        "connection": {
+          "connecting": false,
+          "_hadError": false,
+          "_parent": null,
+          "_host": null,
+          "_readableState": {
+            "objectMode": false,
+            "highWaterMark": 16384,
+            "buffer": { "head": null, "tail": null, "length": 0 },
+            "length": 0,
+            "pipes": [],
+            "flowing": true,
+            "ended": false,
+            "endEmitted": false,
+            "reading": false,
+            "constructed": true,
+            "sync": false,
+            "needReadable": true,
+            "emittedReadable": false,
+            "readableListening": false,
+            "resumeScheduled": false,
+            "errorEmitted": false,
+            "emitClose": false,
+            "autoDestroy": true,
+            "destroyed": false,
+            "errored": null,
+            "closed": false,
+            "closeEmitted": false,
+            "defaultEncoding": "utf8",
+            "awaitDrainWriters": null,
+            "multiAwaitDrain": false,
+            "readingMore": false,
+            "decoder": null,
+            "encoding": null
+          },
+          "_events": { "end": [null, null] },
+          "_eventsCount": 5,
+          "_writableState": {
+            "objectMode": false,
+            "highWaterMark": 16384,
+            "finalCalled": false,
+            "needDrain": false,
+            "ending": false,
+            "ended": false,
+            "finished": false,
+            "destroyed": false,
+            "decodeStrings": false,
+            "defaultEncoding": "utf8",
+            "length": 0,
+            "writing": false,
+            "corked": 0,
+            "sync": false,
+            "bufferProcessing": false,
+            "writecb": null,
+            "writelen": 0,
+            "afterWriteTickInfo": null,
+            "buffered": [],
+            "bufferedIndex": 0,
+            "allBuffers": true,
+            "allNoop": true,
+            "pendingcb": 0,
+            "constructed": true,
+            "prefinished": false,
+            "errorEmitted": false,
+            "emitClose": false,
+            "autoDestroy": true,
+            "errored": null,
+            "closed": false,
+            "closeEmitted": false
+          },
+          "allowHalfOpen": false,
+          "_sockname": null,
+          "_pendingData": null,
+          "_pendingEncoding": "",
+          "server": null,
+          "_server": null
+        },
+        "attributes": [],
+        "notAttributes": [],
+        "sentEntries": 0
+      }
+    },
+    "[\"dc=adtest,dc=local\",{\"filter\":\"(objectSid=S-1-5-21-2050130036-2835941282-889556947-513)\",\"scope\":\"sub\"}]": {
+      "entries": [
+        {
+          "messageID": 4,
+          "protocolOp": 100,
+          "controls": [],
+          "log": {},
+          "objectName": "CN=Domain Users,CN=Users,DC=adtest,DC=local",
+          "attributes": [
+            {
+              "type": "objectClass",
+              "_vals": [
+                { "type": "Buffer", "data": [116, 111, 112] },
+                { "type": "Buffer", "data": [103, 114, 111, 117, 112] }
+              ]
+            },
+            {
+              "type": "cn",
+              "_vals": [
+                {
+                  "type": "Buffer",
+                  "data": [
+                    68, 111, 109, 97, 105, 110, 32, 85, 115, 101, 114, 115
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "description",
+              "_vals": [
+                {
+                  "type": "Buffer",
+                  "data": [
+                    65, 108, 108, 32, 100, 111, 109, 97, 105, 110, 32, 117, 115,
+                    101, 114, 115
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "distinguishedName",
+              "_vals": [
+                {
+                  "type": "Buffer",
+                  "data": [
+                    67, 78, 61, 68, 111, 109, 97, 105, 110, 32, 85, 115, 101,
+                    114, 115, 44, 67, 78, 61, 85, 115, 101, 114, 115, 44, 68,
+                    67, 61, 97, 100, 116, 101, 115, 116, 44, 68, 67, 61, 108,
+                    111, 99, 97, 108
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "instanceType",
+              "_vals": [{ "type": "Buffer", "data": [52] }]
+            },
+            {
+              "type": "whenCreated",
+              "_vals": [
+                {
+                  "type": "Buffer",
+                  "data": [
+                    50, 48, 50, 49, 48, 54, 49, 57, 50, 49, 49, 55, 50, 52, 46,
+                    48, 90
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "whenChanged",
+              "_vals": [
+                {
+                  "type": "Buffer",
+                  "data": [
+                    50, 48, 50, 49, 48, 54, 49, 57, 50, 49, 49, 55, 50, 52, 46,
+                    48, 90
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "uSNCreated",
+              "_vals": [{ "type": "Buffer", "data": [49, 50, 51, 52, 56] }]
+            },
+            {
+              "type": "memberOf",
+              "_vals": [
+                {
+                  "type": "Buffer",
+                  "data": [
+                    67, 78, 61, 85, 115, 101, 114, 115, 44, 67, 78, 61, 66, 117,
+                    105, 108, 116, 105, 110, 44, 68, 67, 61, 97, 100, 116, 101,
+                    115, 116, 44, 68, 67, 61, 108, 111, 99, 97, 108
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "uSNChanged",
+              "_vals": [{ "type": "Buffer", "data": [49, 50, 51, 53, 48] }]
+            },
+            {
+              "type": "name",
+              "_vals": [
+                {
+                  "type": "Buffer",
+                  "data": [
+                    68, 111, 109, 97, 105, 110, 32, 85, 115, 101, 114, 115
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "objectGUID",
+              "_vals": [
+                {
+                  "type": "Buffer",
+                  "data": [
+                    14, 63, 120, 85, 195, 104, 147, 71, 166, 20, 92, 101, 101,
+                    4, 10, 126
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "objectSid",
+              "_vals": [
+                {
+                  "type": "Buffer",
+                  "data": [
+                    1, 5, 0, 0, 0, 0, 0, 5, 21, 0, 0, 0, 116, 128, 50, 122, 162,
+                    7, 9, 169, 211, 143, 5, 53, 1, 2, 0, 0
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "sAMAccountName",
+              "_vals": [
+                {
+                  "type": "Buffer",
+                  "data": [
+                    68, 111, 109, 97, 105, 110, 32, 85, 115, 101, 114, 115
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "sAMAccountType",
+              "_vals": [
+                {
+                  "type": "Buffer",
+                  "data": [50, 54, 56, 52, 51, 53, 52, 53, 54]
+                }
+              ]
+            },
+            {
+              "type": "groupType",
+              "_vals": [
+                {
+                  "type": "Buffer",
+                  "data": [45, 50, 49, 52, 55, 52, 56, 51, 54, 52, 54]
+                }
+              ]
+            },
+            {
+              "type": "objectCategory",
+              "_vals": [
+                {
+                  "type": "Buffer",
+                  "data": [
+                    67, 78, 61, 71, 114, 111, 117, 112, 44, 67, 78, 61, 83, 99,
+                    104, 101, 109, 97, 44, 67, 78, 61, 67, 111, 110, 102, 105,
+                    103, 117, 114, 97, 116, 105, 111, 110, 44, 68, 67, 61, 97,
+                    100, 116, 101, 115, 116, 44, 68, 67, 61, 108, 111, 99, 97,
+                    108
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "isCriticalSystemObject",
+              "_vals": [{ "type": "Buffer", "data": [84, 82, 85, 69] }]
+            },
+            {
+              "type": "dSCorePropagationData",
+              "_vals": [
+                {
+                  "type": "Buffer",
+                  "data": [
+                    50, 48, 50, 49, 48, 54, 49, 57, 50, 49, 49, 55, 50, 53, 46,
+                    48, 90
+                  ]
+                },
+                {
+                  "type": "Buffer",
+                  "data": [
+                    49, 54, 48, 49, 48, 49, 48, 49, 48, 48, 48, 48, 48, 49, 46,
+                    48, 90
+                  ]
+                }
+              ]
+            }
+          ],
+          "connection": {
+            "connecting": false,
+            "_hadError": false,
+            "_parent": null,
+            "_host": null,
+            "_readableState": {
+              "objectMode": false,
+              "highWaterMark": 16384,
+              "buffer": { "head": null, "tail": null, "length": 0 },
+              "length": 0,
+              "pipes": [],
+              "flowing": true,
+              "ended": false,
+              "endEmitted": false,
+              "reading": false,
+              "constructed": true,
+              "sync": false,
+              "needReadable": true,
+              "emittedReadable": false,
+              "readableListening": false,
+              "resumeScheduled": false,
+              "errorEmitted": false,
+              "emitClose": false,
+              "autoDestroy": true,
+              "destroyed": false,
+              "errored": null,
+              "closed": false,
+              "closeEmitted": false,
+              "defaultEncoding": "utf8",
+              "awaitDrainWriters": null,
+              "multiAwaitDrain": false,
+              "readingMore": false,
+              "decoder": null,
+              "encoding": null
+            },
+            "_events": { "end": [null, null] },
+            "_eventsCount": 5,
+            "_writableState": {
+              "objectMode": false,
+              "highWaterMark": 16384,
+              "finalCalled": false,
+              "needDrain": false,
+              "ending": false,
+              "ended": false,
+              "finished": false,
+              "destroyed": false,
+              "decodeStrings": false,
+              "defaultEncoding": "utf8",
+              "length": 0,
+              "writing": false,
+              "corked": 0,
+              "sync": false,
+              "bufferProcessing": false,
+              "writecb": null,
+              "writelen": 0,
+              "afterWriteTickInfo": null,
+              "buffered": [],
+              "bufferedIndex": 0,
+              "allBuffers": true,
+              "allNoop": true,
+              "pendingcb": 0,
+              "constructed": true,
+              "prefinished": false,
+              "errorEmitted": false,
+              "emitClose": false,
+              "autoDestroy": true,
+              "errored": null,
+              "closed": false,
+              "closeEmitted": false
+            },
+            "allowHalfOpen": false,
+            "_sockname": null,
+            "_pendingData": null,
+            "_pendingEncoding": "",
+            "server": null,
+            "_server": null
+          },
+          "object": {
+            "dn": "CN=Domain Users,CN=Users,DC=adtest,DC=local",
+            "controls": [],
+            "objectClass": ["top", "group"],
+            "cn": "Domain Users",
+            "description": "All domain users",
+            "distinguishedName": "CN=Domain Users,CN=Users,DC=adtest,DC=local",
+            "instanceType": "4",
+            "whenCreated": "20210619211724.0Z",
+            "whenChanged": "20210619211724.0Z",
+            "uSNCreated": "12348",
+            "memberOf": "CN=Users,CN=Builtin,DC=adtest,DC=local",
+            "uSNChanged": "12350",
+            "name": "Domain Users",
+            "objectGUID": "\u000e?xU�h�G�\u0014\\ee\u0004\n~",
+            "objectSid": "\u0001\u0005\u0000\u0000\u0000\u0000\u0000\u0005\u0015\u0000\u0000\u0000t�2z�\u0007\t�ӏ\u00055\u0001\u0002\u0000\u0000",
+            "sAMAccountName": "Domain Users",
+            "sAMAccountType": "268435456",
+            "groupType": "-2147483646",
+            "objectCategory": "CN=Group,CN=Schema,CN=Configuration,DC=adtest,DC=local",
+            "isCriticalSystemObject": "TRUE",
+            "dSCorePropagationData": ["20210619211725.0Z", "16010101000001.0Z"]
+          },
+          "raw": {
+            "dn": "CN=Domain Users,CN=Users,DC=adtest,DC=local",
+            "controls": [],
+            "objectClass": [
+              { "type": "Buffer", "data": [116, 111, 112] },
+              { "type": "Buffer", "data": [103, 114, 111, 117, 112] }
+            ],
+            "cn": {
+              "type": "Buffer",
+              "data": [68, 111, 109, 97, 105, 110, 32, 85, 115, 101, 114, 115]
+            },
+            "description": {
+              "type": "Buffer",
+              "data": [
+                65, 108, 108, 32, 100, 111, 109, 97, 105, 110, 32, 117, 115,
+                101, 114, 115
+              ]
+            },
+            "distinguishedName": {
+              "type": "Buffer",
+              "data": [
+                67, 78, 61, 68, 111, 109, 97, 105, 110, 32, 85, 115, 101, 114,
+                115, 44, 67, 78, 61, 85, 115, 101, 114, 115, 44, 68, 67, 61, 97,
+                100, 116, 101, 115, 116, 44, 68, 67, 61, 108, 111, 99, 97, 108
+              ]
+            },
+            "instanceType": { "type": "Buffer", "data": [52] },
+            "whenCreated": {
+              "type": "Buffer",
+              "data": [
+                50, 48, 50, 49, 48, 54, 49, 57, 50, 49, 49, 55, 50, 52, 46, 48,
+                90
+              ]
+            },
+            "whenChanged": {
+              "type": "Buffer",
+              "data": [
+                50, 48, 50, 49, 48, 54, 49, 57, 50, 49, 49, 55, 50, 52, 46, 48,
+                90
+              ]
+            },
+            "uSNCreated": { "type": "Buffer", "data": [49, 50, 51, 52, 56] },
+            "memberOf": {
+              "type": "Buffer",
+              "data": [
+                67, 78, 61, 85, 115, 101, 114, 115, 44, 67, 78, 61, 66, 117,
+                105, 108, 116, 105, 110, 44, 68, 67, 61, 97, 100, 116, 101, 115,
+                116, 44, 68, 67, 61, 108, 111, 99, 97, 108
+              ]
+            },
+            "uSNChanged": { "type": "Buffer", "data": [49, 50, 51, 53, 48] },
+            "name": {
+              "type": "Buffer",
+              "data": [68, 111, 109, 97, 105, 110, 32, 85, 115, 101, 114, 115]
+            },
+            "objectGUID": {
+              "type": "Buffer",
+              "data": [
+                14, 63, 120, 85, 195, 104, 147, 71, 166, 20, 92, 101, 101, 4,
+                10, 126
+              ]
+            },
+            "objectSid": {
+              "type": "Buffer",
+              "data": [
+                1, 5, 0, 0, 0, 0, 0, 5, 21, 0, 0, 0, 116, 128, 50, 122, 162, 7,
+                9, 169, 211, 143, 5, 53, 1, 2, 0, 0
+              ]
+            },
+            "sAMAccountName": {
+              "type": "Buffer",
+              "data": [68, 111, 109, 97, 105, 110, 32, 85, 115, 101, 114, 115]
+            },
+            "sAMAccountType": {
+              "type": "Buffer",
+              "data": [50, 54, 56, 52, 51, 53, 52, 53, 54]
+            },
+            "groupType": {
+              "type": "Buffer",
+              "data": [45, 50, 49, 52, 55, 52, 56, 51, 54, 52, 54]
+            },
+            "objectCategory": {
+              "type": "Buffer",
+              "data": [
+                67, 78, 61, 71, 114, 111, 117, 112, 44, 67, 78, 61, 83, 99, 104,
+                101, 109, 97, 44, 67, 78, 61, 67, 111, 110, 102, 105, 103, 117,
+                114, 97, 116, 105, 111, 110, 44, 68, 67, 61, 97, 100, 116, 101,
+                115, 116, 44, 68, 67, 61, 108, 111, 99, 97, 108
+              ]
+            },
+            "isCriticalSystemObject": {
+              "type": "Buffer",
+              "data": [84, 82, 85, 69]
+            },
+            "dSCorePropagationData": [
+              {
+                "type": "Buffer",
+                "data": [
+                  50, 48, 50, 49, 48, 54, 49, 57, 50, 49, 49, 55, 50, 53, 46,
+                  48, 90
+                ]
+              },
+              {
+                "type": "Buffer",
+                "data": [
+                  49, 54, 48, 49, 48, 49, 48, 49, 48, 48, 48, 48, 48, 49, 46,
+                  48, 90
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "end": {
+        "messageID": 4,
+        "protocolOp": 101,
+        "controls": [],
+        "log": {},
+        "status": 0,
+        "matchedDN": "",
+        "errorMessage": "",
+        "referrals": [],
+        "connection": {
+          "connecting": false,
+          "_hadError": false,
+          "_parent": null,
+          "_host": null,
+          "_readableState": {
+            "objectMode": false,
+            "highWaterMark": 16384,
+            "buffer": { "head": null, "tail": null, "length": 0 },
+            "length": 0,
+            "pipes": [],
+            "flowing": true,
+            "ended": false,
+            "endEmitted": false,
+            "reading": false,
+            "constructed": true,
+            "sync": false,
+            "needReadable": true,
+            "emittedReadable": false,
+            "readableListening": false,
+            "resumeScheduled": false,
+            "errorEmitted": false,
+            "emitClose": false,
+            "autoDestroy": true,
+            "destroyed": false,
+            "errored": null,
+            "closed": false,
+            "closeEmitted": false,
+            "defaultEncoding": "utf8",
+            "awaitDrainWriters": null,
+            "multiAwaitDrain": false,
+            "readingMore": false,
+            "decoder": null,
+            "encoding": null
+          },
+          "_events": { "end": [null, null] },
+          "_eventsCount": 5,
+          "_writableState": {
+            "objectMode": false,
+            "highWaterMark": 16384,
+            "finalCalled": false,
+            "needDrain": false,
+            "ending": false,
+            "ended": false,
+            "finished": false,
+            "destroyed": false,
+            "decodeStrings": false,
+            "defaultEncoding": "utf8",
+            "length": 0,
+            "writing": false,
+            "corked": 0,
+            "sync": false,
+            "bufferProcessing": false,
+            "writecb": null,
+            "writelen": 0,
+            "afterWriteTickInfo": null,
+            "buffered": [],
+            "bufferedIndex": 0,
+            "allBuffers": true,
+            "allNoop": true,
+            "pendingcb": 0,
+            "constructed": true,
+            "prefinished": false,
+            "errorEmitted": false,
+            "emitClose": false,
+            "autoDestroy": true,
+            "errored": null,
+            "closed": false,
+            "closeEmitted": false
+          },
+          "allowHalfOpen": false,
+          "_sockname": null,
+          "_pendingData": null,
+          "_pendingEncoding": "",
+          "server": null,
+          "_server": null
+        },
+        "attributes": [],
+        "notAttributes": [],
+        "sentEntries": 0
+      }
+    }
+  }
+}

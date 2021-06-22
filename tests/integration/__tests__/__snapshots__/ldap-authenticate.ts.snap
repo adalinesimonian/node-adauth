@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`With invalid credentials Fails authentication 1`] = `[InvalidDnSyntaxError: invalid DN]`;
+
+exports[`With valid credentials Can authenticate against test LDAP server 1`] = `
+Object {
+  "_raw": undefined,
+  "cn": "Bernhard Riemann",
+  "controls": Array [],
+  "dn": "uid=riemann,dc=example,dc=com",
+  "groups": Array [],
+  "mail": "riemann@ldap.forumsys.com",
+  "objectClass": Array [
+    "inetOrgPerson",
+    "organizationalPerson",
+    "person",
+    "top",
+  ],
+  "objectGUID": undefined,
+  "objectSid": undefined,
+  "sn": "Riemann",
+  "uid": "riemann",
+  "userPassword": "{sha}W6ph5Mm5Pz8GgiULbPgzG37mj9g=",
+}
+`;
+
+exports[`With valid credentials Can re-authenticate against test LDAP server 1`] = `
+Object {
+  "_raw": undefined,
+  "cn": "Bernhard Riemann",
+  "controls": Array [],
+  "dn": "uid=riemann,dc=example,dc=com",
+  "groups": Array [],
+  "mail": "riemann@ldap.forumsys.com",
+  "objectClass": Array [
+    "inetOrgPerson",
+    "organizationalPerson",
+    "person",
+    "top",
+  ],
+  "objectGUID": undefined,
+  "objectSid": undefined,
+  "sn": "Riemann",
+  "uid": "riemann",
+  "userPassword": "{sha}W6ph5Mm5Pz8GgiULbPgzG37mj9g=",
+}
+`;
