@@ -3,7 +3,7 @@
     "target": "es6",
     "module": "commonjs",
     "esModuleInterop": true,
-    "declaration": false,
+    "declaration": true,
     "noImplicitAny": false,
     "removeComments": true,
     "outDir": "./dist"
