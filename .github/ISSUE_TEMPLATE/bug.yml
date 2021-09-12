@@ -1,0 +1,63 @@
+name: "\U0001F41B Bug Report"
+description: File a bug report
+title: '[Bug]: '
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to file a bug report!
+
+        If instead you are looking for an answer to a question or help using adauth, [start a discussion](https://github.com/adalinesimonian/node-adauth/discussions/new?category=q-a) instead.
+  - type: input
+    id: node-version
+    attributes:
+      label: Node.js Version
+      description: Get the version of Node.js you're using by running `node -v`
+      placeholder: ex. v16.9.1
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction-steps
+    attributes:
+      label: How did you encounter this bug?
+      description: Describe how this bug can be reproduced.
+      placeholder: ex. ADAuth fails to create an instance even with valid options.
+    validations:
+      required: true
+  - type: textarea
+    id: code-snippet
+    attributes:
+      label: Code Snippet
+      description: Provide a code snippet that reproduces the bug.
+      placeholder: |
+        import ADAuth from 'adauth'
+
+        const auth = await ADAuth.create({
+          url: 'ldaps://corp.example.com:636',
+          domainDN: 'dc=example,dc=com',
+        }) // throws an error
+      render: typescript
+  - type: textarea
+    id: actual-behaviour
+    attributes:
+      label: Actual Behaviour
+      description: What happens currently and how is it wrong?
+    validations:
+      required: true
+  - type: textarea
+    id: expected-behaviour
+    attributes:
+      label: Expected Behaviour
+      description: What did you expect to happen?
+      placeholder: ex. Should return an empty object.
+    validations:
+      required: true
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of Conduct
+      description: By submitting this issue, you agree to follow our [Code of Conduct](https://github.com/adalinesimonian/node-adauth/blob/main/CODE_OF_CONDUCT.md).
+      options:
+        - label: I agree to follow adauth's Code of Conduct
+          required: true
