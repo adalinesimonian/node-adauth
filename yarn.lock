@@ -819,14 +819,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/bcryptjs@npm:^2.4.2":
+"@types/bcryptjs@npm:2.4.2":
   version: 2.4.2
   resolution: "@types/bcryptjs@npm:2.4.2"
   checksum: 220dade7b0312b41e23ccfb15f2ddde7804eb3c7ef41db41a6c49054be1e19a15eb3dd8c8ef196494f0866307cce22ad6f3f272941387124707d81dc66155bbc
   languageName: node
   linkType: hard
 
-"@types/bunyan@npm:^1.8.6":
+"@types/bunyan@npm:1.8.6":
   version: 1.8.6
   resolution: "@types/bunyan@npm:1.8.6"
   dependencies:
@@ -869,7 +869,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/jest@npm:^26.0.23":
+"@types/jest@npm:26.0.23":
   version: 26.0.23
   resolution: "@types/jest@npm:26.0.23"
   dependencies:
@@ -886,7 +886,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/ldapjs@npm:^1.0.9":
+"@types/ldapjs@npm:1.0.10":
   version: 1.0.10
   resolution: "@types/ldapjs@npm:1.0.10"
   dependencies:
@@ -895,21 +895,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/long@npm:^4.0.1":
+"@types/long@npm:4.0.1":
   version: 4.0.1
   resolution: "@types/long@npm:4.0.1"
   checksum: ff9653c33f5000d0f131fd98a950a0343e2e33107dd067a97ac4a3b9678e1a2e39ea44772ad920f54ef6e8f107f76bc92c2584ba905a0dc4253282a4101166d0
   languageName: node
   linkType: hard
 
-"@types/lru-cache@npm:^5.1.0":
+"@types/lru-cache@npm:5.1.0":
   version: 5.1.0
   resolution: "@types/lru-cache@npm:5.1.0"
   checksum: fc255bfe7740ede1161978bd2f7a007d9ebd9b6397cfef3bf60130102ab9f6304a680cd41a20d112fd420022a66293be89df659bacfcd66a4a36562168358e22
   languageName: node
   linkType: hard
 
-"@types/make-fetch-happen@npm:^8.0.1":
+"@types/make-fetch-happen@npm:8.0.1":
   version: 8.0.1
   resolution: "@types/make-fetch-happen@npm:8.0.1"
   dependencies:
@@ -931,7 +931,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:^12.20.15":
+"@types/node@npm:*, @types/node@npm:12.20.15":
   version: 12.20.15
   resolution: "@types/node@npm:12.20.15"
   checksum: 283922c98f44a3ddd144791ea1f2c5dffc5fe6a67200ae505ef8e82ed288731736fe5a000af3fad6fd5b8d89fdad64bd8ae8ff38615be249701bd236706cb527
@@ -968,7 +968,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/valid-url@npm:^1.0.3":
+"@types/valid-url@npm:1.0.3":
   version: 1.0.3
   resolution: "@types/valid-url@npm:1.0.3"
   checksum: bd527221b4f839c440600520f9bfbdb340f473543ea5ee25215f35155ae52fd2cc5c39086cab2ffa67a54a7c303de937fcc8a58edf9bc5b7000169d7a7aa8d42
@@ -1169,35 +1169,35 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "adauth@workspace:."
   dependencies:
-    "@types/bcryptjs": ^2.4.2
-    "@types/bunyan": ^1.8.6
-    "@types/jest": ^26.0.23
-    "@types/ldapjs": ^1.0.9
-    "@types/long": ^4.0.1
-    "@types/lru-cache": ^5.1.0
-    "@types/make-fetch-happen": ^8.0.1
-    "@types/node": ^12.20.15
-    "@types/valid-url": ^1.0.3
+    "@types/bcryptjs": 2.4.2
+    "@types/bunyan": 1.8.6
+    "@types/jest": 26.0.23
+    "@types/ldapjs": 1.0.10
+    "@types/long": 4.0.1
+    "@types/lru-cache": 5.1.0
+    "@types/make-fetch-happen": 8.0.1
+    "@types/node": 12.20.15
+    "@types/valid-url": 1.0.3
     "@typescript-eslint/eslint-plugin": ^4.27.0
     "@typescript-eslint/parser": ^4.27.0
     bcryptjs: ^2.4.0
-    bunyan: ^1.8.14
-    chokidar-cli: ^2.1.0
-    cross-env: ^7.0.3
-    eslint: ^7.29.0
-    eslint-config-prettier: ^8.3.0
-    fast-json-stable-stringify: ^2.1.0
+    bunyan: 1.8.15
+    chokidar-cli: 2.1.0
+    cross-env: 7.0.3
+    eslint: 7.29.0
+    eslint-config-prettier: 8.3.0
+    fast-json-stable-stringify: 2.1.0
     jest: ^27.0.4
     ldapjs: ^2.2.1
     long: ^2.2.3
     lru-cache: ^6.0.0
     make-fetch-happen: ^9.0.3
-    npm-run-all: ^4.1.5
-    prettier: ^2.3.1
+    npm-run-all: 4.1.5
+    prettier: 2.3.1
     sync-request: ^2.0.1
-    ts-jest: ^27.0.3
-    ts-node: ^10.0.0
-    typescript: ^4.3.4
+    ts-jest: 27.0.3
+    ts-node: 10.0.0
+    typescript: 4.3.4
     valid-url: ^1.0.9
   languageName: unknown
   linkType: soft
@@ -1585,7 +1585,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"bunyan@npm:^1.8.14":
+"bunyan@npm:1.8.15":
   version: 1.8.15
   resolution: "bunyan@npm:1.8.15"
   dependencies:
@@ -1706,7 +1706,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"chokidar-cli@npm:^2.1.0":
+"chokidar-cli@npm:2.1.0":
   version: 2.1.0
   resolution: "chokidar-cli@npm:2.1.0"
   dependencies:
@@ -1907,7 +1907,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cross-env@npm:^7.0.3":
+"cross-env@npm:7.0.3":
   version: 7.0.3
   resolution: "cross-env@npm:7.0.3"
   dependencies:
@@ -2270,7 +2270,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-config-prettier@npm:^8.3.0":
+"eslint-config-prettier@npm:8.3.0":
   version: 8.3.0
   resolution: "eslint-config-prettier@npm:8.3.0"
   peerDependencies:
@@ -2325,7 +2325,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint@npm:^7.29.0":
+"eslint@npm:7.29.0":
   version: 7.29.0
   resolution: "eslint@npm:7.29.0"
   dependencies:
@@ -2500,7 +2500,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fast-json-stable-stringify@npm:2.x, fast-json-stable-stringify@npm:^2.0.0, fast-json-stable-stringify@npm:^2.1.0":
+"fast-json-stable-stringify@npm:2.1.0, fast-json-stable-stringify@npm:2.x, fast-json-stable-stringify@npm:^2.0.0":
   version: 2.1.0
   resolution: "fast-json-stable-stringify@npm:2.1.0"
   checksum: b191531e36c607977e5b1c47811158733c34ccb3bfde92c44798929e9b4154884378536d26ad90dfecd32e1ffc09c545d23535ad91b3161a27ddbb8ebe0cbecb
@@ -4394,7 +4394,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"npm-run-all@npm:^4.1.5":
+"npm-run-all@npm:4.1.5":
   version: 4.1.5
   resolution: "npm-run-all@npm:4.1.5"
   dependencies:
@@ -4732,7 +4732,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:^2.3.1":
+"prettier@npm:2.3.1":
   version: 2.3.1
   resolution: "prettier@npm:2.3.1"
   bin:
@@ -5612,7 +5612,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ts-jest@npm:^27.0.3":
+"ts-jest@npm:27.0.3":
   version: 27.0.3
   resolution: "ts-jest@npm:27.0.3"
   dependencies:
@@ -5635,7 +5635,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ts-node@npm:^10.0.0":
+"ts-node@npm:10.0.0":
   version: 10.0.0
   resolution: "ts-node@npm:10.0.0"
   dependencies:
@@ -5742,7 +5742,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-typescript@^4.3.4:
+typescript@4.3.4:
   version: 4.3.4
   resolution: "typescript@npm:4.3.4"
   bin:
@@ -5752,7 +5752,7 @@ typescript@^4.3.4:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@^4.3.4#~builtin<compat/typescript>":
+"typescript@patch:typescript@4.3.4#~builtin<compat/typescript>":
   version: 4.3.4
   resolution: "typescript@patch:typescript@npm%3A4.3.4#~builtin<compat/typescript>::version=4.3.4&hash=32657b"
   bin:
