@@ -909,15 +909,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/make-fetch-happen@npm:8.0.1":
-  version: 8.0.1
-  resolution: "@types/make-fetch-happen@npm:8.0.1"
+"@types/make-fetch-happen@npm:8.0.2":
+  version: 8.0.2
+  resolution: "@types/make-fetch-happen@npm:8.0.2"
   dependencies:
     "@types/node": "*"
     "@types/node-fetch": "*"
     "@types/retry": "*"
     "@types/ssri": "*"
-  checksum: 7a22d3a203b805218bf803ff6e4b9fac895c064339e3c40a85cfc4e4515a6f27d97923488fa341972e94e725cbe9545fedabeade3e35a36d5eca5a503bdc0cfa
+  checksum: 98c155e7888f436042938e6178b514ee81d3b877fb03d11db0c255c33cac4801ae34679eda9a548523e415558590aac8ef8bc058361663c82b76db7f114ebffd
   languageName: node
   linkType: hard
 
@@ -1175,7 +1175,7 @@ __metadata:
     "@types/ldapjs": 1.0.11
     "@types/long": 4.0.1
     "@types/lru-cache": 5.1.1
-    "@types/make-fetch-happen": 8.0.1
+    "@types/make-fetch-happen": 8.0.2
     "@types/node": 12.20.15
     "@types/valid-url": 1.0.3
     "@typescript-eslint/eslint-plugin": 4.27.0
