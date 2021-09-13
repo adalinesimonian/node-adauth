@@ -1187,7 +1187,7 @@ __metadata:
     eslint: 7.29.0
     eslint-config-prettier: 8.3.0
     fast-json-stable-stringify: 2.1.0
-    jest: ^27.0.4
+    jest: 27.0.4
     ldapjs: ^2.2.1
     long: ^2.2.3
     lru-cache: ^6.0.0
@@ -3754,7 +3754,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jest@npm:^27.0.4":
+"jest@npm:27.0.4":
   version: 27.0.4
   resolution: "jest@npm:27.0.4"
   dependencies:
