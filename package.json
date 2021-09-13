@@ -55,7 +55,7 @@
     "long": "^4.0.0",
     "lru-cache": "^6.0.0",
     "make-fetch-happen": "^9.0.3",
-    "sync-request": "^2.0.1",
+    "sync-request": "^6.0.0",
     "valid-url": "^1.0.9"
   },
   "devDependencies": {
