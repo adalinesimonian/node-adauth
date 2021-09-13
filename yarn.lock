@@ -1235,7 +1235,7 @@ __metadata:
     fast-json-stable-stringify: 2.1.0
     jest: 27.2.0
     ldapjs: ^2.2.1
-    long: ^2.2.3
+    long: ^4.0.0
     lru-cache: ^6.0.0
     make-fetch-happen: ^9.0.3
     npm-run-all: 4.1.5
@@ -4048,10 +4048,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"long@npm:^2.2.3":
-  version: 2.4.0
-  resolution: "long@npm:2.4.0"
-  checksum: e24fd5e14be90ba6ec3faa43b3b0f1c4ac88bfdc52471d90f63e173572f6db27c45873e847f8af58283ca3140eb42d7ba11708102f3cc0956793b03305c737e0
+"long@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "long@npm:4.0.0"
+  checksum: 16afbe8f749c7c849db1f4de4e2e6a31ac6e617cead3bdc4f9605cb703cd20e1e9fc1a7baba674ffcca57d660a6e5b53a9e236d7b25a295d3855cca79cc06744
   languageName: node
   linkType: hard
 
