@@ -52,7 +52,7 @@
   "dependencies": {
     "bcryptjs": "^2.4.0",
     "ldapjs": "^2.2.1",
-    "long": "^2.2.3",
+    "long": "^4.0.0",
     "lru-cache": "^6.0.0",
     "make-fetch-happen": "^9.0.3",
     "sync-request": "^2.0.1",
