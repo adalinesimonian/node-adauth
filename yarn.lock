@@ -943,25 +943,24 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/make-fetch-happen@npm:8.0.2":
-  version: 8.0.2
-  resolution: "@types/make-fetch-happen@npm:8.0.2"
+"@types/make-fetch-happen@npm:9.0.1":
+  version: 9.0.1
+  resolution: "@types/make-fetch-happen@npm:9.0.1"
   dependencies:
-    "@types/node": "*"
-    "@types/node-fetch": "*"
+    "@types/node-fetch": ^2.5.12
     "@types/retry": "*"
     "@types/ssri": "*"
-  checksum: 98c155e7888f436042938e6178b514ee81d3b877fb03d11db0c255c33cac4801ae34679eda9a548523e415558590aac8ef8bc058361663c82b76db7f114ebffd
+  checksum: 464c3353189018e9e53b66c8cb04042a0e56532df6d3783c33bc0446510a46fc502f2decd2c075fa58283edc2bc8a793719b6a253609c88c6ccfac297ac91a55
   languageName: node
   linkType: hard
 
-"@types/node-fetch@npm:*":
-  version: 2.5.10
-  resolution: "@types/node-fetch@npm:2.5.10"
+"@types/node-fetch@npm:^2.5.12":
+  version: 2.5.12
+  resolution: "@types/node-fetch@npm:2.5.12"
   dependencies:
     "@types/node": "*"
     form-data: ^3.0.0
-  checksum: 504d3834083fcbb90dc488618a60d078ff3b018c3c77e649b4990aff6dfafe9e41c82699ed474e01d9df40448240b6b455653d25afeecbc0eacb4154a217c253
+  checksum: ad63c85ba6a9477b8e057ec8682257738130d98e8ece4e31141789bd99df9d9147985cc8bc0cb5c8983ed5aa6bb95d46df23d1e055f4ad5cf8b82fc69cf626c7
   languageName: node
   linkType: hard
 
@@ -1222,7 +1221,7 @@ __metadata:
     "@types/ldapjs": 1.0.11
     "@types/long": 4.0.1
     "@types/lru-cache": 5.1.1
-    "@types/make-fetch-happen": 8.0.2
+    "@types/make-fetch-happen": 9.0.1
     "@types/node": 12.20.24
     "@types/valid-url": 1.0.3
     "@typescript-eslint/eslint-plugin": 4.31.0
