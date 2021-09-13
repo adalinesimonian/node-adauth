@@ -1228,7 +1228,7 @@ __metadata:
     "@typescript-eslint/parser": 4.31.1
     bcryptjs: ^2.4.0
     bunyan: 1.8.15
-    chokidar-cli: 2.1.0
+    chokidar-cli: 3.0.0
     cross-env: 7.0.3
     eslint: 7.32.0
     eslint-config-prettier: 8.3.0
@@ -1752,21 +1752,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"chokidar-cli@npm:2.1.0":
-  version: 2.1.0
-  resolution: "chokidar-cli@npm:2.1.0"
+"chokidar-cli@npm:3.0.0":
+  version: 3.0.0
+  resolution: "chokidar-cli@npm:3.0.0"
   dependencies:
-    chokidar: ^3.2.3
+    chokidar: ^3.5.2
     lodash.debounce: ^4.0.8
     lodash.throttle: ^4.1.1
     yargs: ^13.3.0
   bin:
-    chokidar: ./index.js
-  checksum: 896c46df299281851f8cf523b4458bfe819318dc72669771ec0e69449d9f6ca8124bd681ca4ec69091d40fb4f572340c97fa372c353958846f9f780ad7bd5672
+    chokidar: index.js
+  checksum: 4a4ffb83aaa3e1745bc1f279f25c66e5b2dd84cac500c4f1b6a2602254e05e717f646678e54e419144fe398a1a672a5b061e19d82ba5a61a636385a2aa11d825
   languageName: node
   linkType: hard
 
-"chokidar@npm:^3.2.3":
+"chokidar@npm:^3.5.2":
   version: 3.5.2
   resolution: "chokidar@npm:3.5.2"
   dependencies:
