@@ -97,7 +97,11 @@ export default class ADDumpReader {
     return Object.assign({}, this.#dump.config)
   }
 
-  optionsMatchDump(url: string): boolean {
+  optionsMatchDump(url: string | string[]): boolean {
+    if (Array.isArray(url)) {
+      return false
+    }
+
     const { config } = this.#dump
 
     try {
