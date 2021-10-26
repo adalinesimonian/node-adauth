@@ -975,10 +975,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:12.20.35":
-  version: 12.20.35
-  resolution: "@types/node@npm:12.20.35"
-  checksum: 4705c7dd2d41b6bcf2da92e9f374c9ac732576a5fd50f530c1652436f5b57c34258f3ab6d6da7e6182dfee519533bd5142cc4d24645d402e65b03879a47e72c4
+"@types/node@npm:12.20.36":
+  version: 12.20.36
+  resolution: "@types/node@npm:12.20.36"
+  checksum: 096748b23e70f6a60ea3f93e4abc7b52b93977270ae48bb793b73a6ab3d4ef2a03294f73e86213a957255f50ce29ebaf39ffdf30a2e068662a18416ba3942656
   languageName: node
   linkType: hard
 
@@ -1227,7 +1227,7 @@ __metadata:
     "@types/long": 4.0.1
     "@types/lru-cache": 5.1.1
     "@types/make-fetch-happen": 9.0.1
-    "@types/node": 12.20.35
+    "@types/node": 12.20.36
     "@types/valid-url": 1.0.3
     "@typescript-eslint/eslint-plugin": 5.2.0
     "@typescript-eslint/parser": 5.2.0
