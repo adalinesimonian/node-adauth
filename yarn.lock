@@ -864,12 +864,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/bunyan@npm:1.8.7":
-  version: 1.8.7
-  resolution: "@types/bunyan@npm:1.8.7"
+"@types/bunyan@npm:1.8.8":
+  version: 1.8.8
+  resolution: "@types/bunyan@npm:1.8.8"
   dependencies:
     "@types/node": "*"
-  checksum: b641a6f95f4ae72ddc48324e4b6d19227c576ccd16da0bcfdee73853b57c629bee38405ee2853b1d3c1f80ad910d8efe02bf332f67a853b11df51c9f9597a9ce
+  checksum: b28966c13579b281ae75560d8c99ee4149348818cd4c4d6424afeee9fdab1039db2a0c06f1ab62fbf8c71f99dcebb70551bb45f2110d6a1fc3e3f891355b6b4b
   languageName: node
   linkType: hard
 
@@ -1221,7 +1221,7 @@ __metadata:
   resolution: "adauth@workspace:."
   dependencies:
     "@types/bcryptjs": 2.4.2
-    "@types/bunyan": 1.8.7
+    "@types/bunyan": 1.8.8
     "@types/jest": 27.0.2
     "@types/ldapjs": 2.2.2
     "@types/long": 4.0.1
