@@ -54,7 +54,7 @@ export default class Cache {
    * at the trace level.
    * @param name Name for the cache, used when logging.
    */
-  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+
   constructor(size: number, expiry: number, log: any, name: string) {
     assert.ok(size !== undefined)
     assert.ok(expiry !== undefined)

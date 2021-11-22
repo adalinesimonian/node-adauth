@@ -10,6 +10,9 @@
     "plugin:@typescript-eslint/recommended",
     "prettier"
   ],
+  "parserOptions": {
+    "project": "./tsconfig.test.json"
+  },
   "rules": {
     "default-case": ["error"],
     "guard-for-in": ["error"],
@@ -39,7 +42,6 @@
     "no-catch-shadow": ["error"],
     "no-shadow": ["error"],
     "no-shadow-restricted-names": ["error"],
-    "no-use-before-define": ["error"],
     "callback-return": ["error"],
     "global-require": ["error"],
     "no-mixed-requires": ["error"],

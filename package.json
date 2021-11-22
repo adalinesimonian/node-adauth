@@ -41,7 +41,7 @@
     "format:eslint": "eslint . --fix",
     "format:prettier": "prettier . --write",
     "lint": "run-p \"lint:*\"",
-    "lint:eslint": "eslint .",
+    "lint:eslint": "eslint . --report-unused-disable-directives",
     "lint:prettier": "prettier . --check",
     "lint:types": "tsc --noEmit",
     "lint-watch": "chokidar \"**/*.{ts,js}\" -i node_modules -c \"yarn lint\"",
