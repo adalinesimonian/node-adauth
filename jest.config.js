@@ -1,9 +1,5 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-const path = require('path')
-const { runADTest, runIntegrationTests } = require(path.join(
-  __dirname,
-  'tests/integration/env'
-))
+const { runADTest, runIntegrationTests } = require('./tests/integration/env')
 
 const testPathIgnorePatterns = ['/node_modules/']
 

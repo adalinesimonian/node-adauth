@@ -177,7 +177,6 @@ namespace ADAuth {
   }
 }
 
-// eslint-disable-next-line no-shadow
 class ADAuth extends EventEmitter {
   readonly options: ADAuth.Options
 
@@ -562,7 +561,6 @@ class ADAuth extends EventEmitter {
    * @returns The user object with groups attached.
    */
   async #findGroups(
-    // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
     user: any,
     options: ldap.SearchOptions = {}
   ): Promise<any[]> {

@@ -1,6 +1,3 @@
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const path = require('path')
-
 const {
   TEST_AD_URL,
   TEST_AD_DOMAIN_DN,
@@ -13,7 +10,7 @@ let configured = {}
 
 try {
   // eslint-disable-next-line global-require
-  configured = require(path.join(__dirname, '../../test.config.js'))
+  configured = require('../../test.config.js')
   // eslint-disable-next-line no-empty
 } catch {}
 

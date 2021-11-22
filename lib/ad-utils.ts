@@ -2,6 +2,7 @@ import Long from 'long'
 
 const binarySIDToString = (binarySID: number[] | Buffer): string => {
   let sid = 'S-' + binarySID[0].toString()
+
   // eslint-disable-next-line no-bitwise
   const subAuthCount = binarySID[1] & 0xff
   let authority
