@@ -940,10 +940,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/lru-cache@npm:5.1.1":
-  version: 5.1.1
-  resolution: "@types/lru-cache@npm:5.1.1"
-  checksum: e1d6c0085f61b16ec5b3073ec76ad1be4844ea036561c3f145fc19f71f084b58a6eb600b14128aa95809d057d28f1d147c910186ae51219f58366ffd2ff2e118
+"@types/lru-cache@npm:7.10.10":
+  version: 7.10.10
+  resolution: "@types/lru-cache@npm:7.10.10"
+  dependencies:
+    lru-cache: "*"
+  checksum: bf0c9a99b3b954adfd1a63621aeea2c7f9412340ac43fad82f2b1ec257df09efa454e6cc7943518659e112b9d650de0e64c5252de9e449576eeb28449e068a1e
   languageName: node
   linkType: hard
 
@@ -1234,7 +1236,7 @@ __metadata:
     "@types/jest": 27.0.3
     "@types/ldapjs": 2.2.2
     "@types/long": 4.0.1
-    "@types/lru-cache": 5.1.1
+    "@types/lru-cache": 7.10.10
     "@types/make-fetch-happen": 9.0.1
     "@types/node": 12.20.37
     "@types/valid-url": 1.0.3
@@ -4076,6 +4078,13 @@ __metadata:
   version: 5.1.0
   resolution: "long@npm:5.1.0"
   checksum: bcf3c7cc204c1ab88f760f70ab8078abacd7fd2b5929e5c76b57149bbe22b788eb88dc0b6abb8e6b27fe87b21f59655d470e5265fcd39fef9ebd0a5d6b19abf6
+  languageName: node
+  linkType: hard
+
+"lru-cache@npm:*":
+  version: 10.2.0
+  resolution: "lru-cache@npm:10.2.0"
+  checksum: eee7ddda4a7475deac51ac81d7dd78709095c6fa46e8350dc2d22462559a1faa3b81ed931d5464b13d48cbd7e08b46100b6f768c76833912bc444b99c37e25db
   languageName: node
   linkType: hard
 
