@@ -62,7 +62,7 @@
     "@types/bcryptjs": "2.4.6",
     "@types/bunyan": "1.8.11",
     "@types/jest": "27.5.2",
-    "@types/ldapjs": "2.2.2",
+    "@types/ldapjs": "2.2.5",
     "@types/long": "4.0.1",
     "@types/lru-cache": "7.10.10",
     "@types/make-fetch-happen": "9.0.1",
