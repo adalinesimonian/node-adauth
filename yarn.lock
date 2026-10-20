@@ -1076,10 +1076,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/bcryptjs@npm:2.4.2":
-  version: 2.4.2
-  resolution: "@types/bcryptjs@npm:2.4.2"
-  checksum: 220dade7b0312b41e23ccfb15f2ddde7804eb3c7ef41db41a6c49054be1e19a15eb3dd8c8ef196494f0866307cce22ad6f3f272941387124707d81dc66155bbc
+"@types/bcryptjs@npm:2.4.6":
+  version: 2.4.6
+  resolution: "@types/bcryptjs@npm:2.4.6"
+  checksum: 25ae1fd1e8a9bd688e22a8de905581d6d7bf26e823b797f895d2c488100b1f15d3c12a7d1a94f553087b010d316bf3978106df860e8e58fd13f52b4c708df5fd
   languageName: node
   linkType: hard
 
@@ -1455,7 +1455,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "adauth@workspace:."
   dependencies:
-    "@types/bcryptjs": 2.4.2
+    "@types/bcryptjs": 2.4.6
     "@types/bunyan": 1.8.8
     "@types/jest": 27.5.2
     "@types/ldapjs": 2.2.2
