@@ -59,7 +59,7 @@
     "valid-url": "^1.0.9"
   },
   "devDependencies": {
-    "@types/bcryptjs": "2.4.2",
+    "@types/bcryptjs": "2.4.6",
     "@types/bunyan": "1.8.8",
     "@types/jest": "27.5.2",
     "@types/ldapjs": "2.2.2",
