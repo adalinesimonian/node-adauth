@@ -1161,12 +1161,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/ldapjs@npm:2.2.2":
-  version: 2.2.2
-  resolution: "@types/ldapjs@npm:2.2.2"
+"@types/ldapjs@npm:2.2.5":
+  version: 2.2.5
+  resolution: "@types/ldapjs@npm:2.2.5"
   dependencies:
     "@types/node": "*"
-  checksum: e5da993f06240251dad1e095564c722124ed08d915781fb3046f7933cde94b5d2681030ab9f48d4aa5d72b655b501bfd6f2ad4ea41d557d0e1a08d574ed058bf
+  checksum: 779e462f118f8a6643b7f49d35646e4dae339ff1c6290198950327a736a79bc03beca882e1356ede4c8d54f6dc19bf544f0d23b09279558d69222a93bacd459c
   languageName: node
   linkType: hard
 
@@ -1506,7 +1506,7 @@ __metadata:
     "@types/bcryptjs": 2.4.6
     "@types/bunyan": 1.8.11
     "@types/jest": 27.5.2
-    "@types/ldapjs": 2.2.2
+    "@types/ldapjs": 2.2.5
     "@types/long": 4.0.1
     "@types/lru-cache": 7.10.10
     "@types/make-fetch-happen": 9.0.1
